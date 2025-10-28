@@ -9,91 +9,112 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-container">
-      <h1 class="logo">House of Links <span>Net</span></h1>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html" class="active">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="header">
+  <div class="container header-container">
+    <h1 class="logo">House of Links <span>Net</span></h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Main Contact Section -->
-  <main class="contact-page">
-    <h2 class="section-title"><center>Get in Touch</center></h2>
-    <p class="section-subtitle" style="margin-bottom: 40px;"><center>We’d love to hear from you! Visit us, call, or send a message.</center></p>
+<main class="contact-page">
+  <h2 class="section-title"><center>Get in Touch</center></h2>
+  <p class="section-subtitle" style="margin-bottom: 40px;"><center>We’d love to hear from you! Visit us, call, or send a message.</center></p>
 
-    <div class="contact-grid">
-      <!-- Contact Info -->
-      <div class="contact-info-box">
-        <div class="info-card">
-          <i class="fas fa-map-marker-alt"></i>
-          <div>
-            <h3>Address</h3>
-            <p>1586 Matebele street Mahwelereng Zone 1, Next To Roma Church</p>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <i class="fas fa-phone"></i>
-          <div>
-            <h3>Phone</h3>
-            <p>072 390 1995 / 076 995 5099</p>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <i class="fas fa-envelope"></i>
-          <div>
-            <h3>Email</h3>
-            <p><a href="mailto:contactus@houseoflinks.tech">contactus@houseoflinks.tech</a></p>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <i class="fas fa-clock"></i>
-          <div>
-            <h3>Hours</h3>
-            <p>7:00 AM - 7:00 PM (Daily)</p>
-          </div>
+  <div class="contact-grid">
+    <div class="contact-info-box">
+      <div class="info-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h3>Address</h3>
+          <p>1586 Matebele street Mahwelereng Zone 1, Next To Roma Church</p>
         </div>
       </div>
 
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <h2>Contact Us</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+      <div class="info-card">
+        <i class="fas fa-phone"></i>
+        <div>
+          <h3>Phone</h3>
+          <p>072 390 1995 / 076 995 5099</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:contactus@houseoflinks.tech">contactus@houseoflinks.tech</a></p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <i class="fas fa-clock"></i>
+        <div>
+          <h3>Hours</h3>
+          <p>7:00 AM - 7:00 PM (Daily)</p>
+        </div>
       </div>
     </div>
 
-    <!-- Google Map -->
-    <div class="map-wrapper" style="width: 100%; margin-top: 40px;">
-      <iframe
-        src="https://www.google.com/maps?q=-24.144161146535243,28.984066725154506&hl=en&z=17&output=embed"
-        width="100%"
-        height="500"
-        style="border:0; border-radius:0;"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-  </main>
+  </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 House of Links. Open daily 7AM - 7PM.</p>
-    </div>
-  </footer>
+  <div class="map-wrapper" style="width: 100%; margin-top: 40px;">
+    <iframe
+      src="https://www.google.com/maps?q=-24.144161146535243,28.984066725154506&hl=en&z=17&output=embed"
+      width="100%"
+      height="500"
+      style="border:0; border-radius:0;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 House of Links. Open daily 7AM - 7PM.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("5WqgrSWK97McjToGx");
+  })();
+
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      title: document.getElementById('subject').value,
+      message: document.getElementById('message').value
+    };
+
+    emailjs.send('service_00o18bz', 'template_sv6walr', formData)
+      .then(() => {}, (error) => {console.error(error);});
+
+    emailjs.send('service_00o18bz', 'template_u447c5a', formData)
+      .then(() => {alert('Thank you! Your message has been sent.'); form.reset();}, (error) => {console.error(error);});
+  });
+</script>
 
 </body>
 </html>
