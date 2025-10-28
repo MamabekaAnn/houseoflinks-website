@@ -108,7 +108,7 @@ section {
   justify-content: center;
 }
 
-.card, .price-card, .package-card, .service-card, .contact-info-box, .contact-form {
+.card, .price-card, .package-card, .service-card {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -128,40 +128,8 @@ section {
   margin-bottom: 15px;
 }
 
-.price-card p, .package-card p, .service-card p, .contact-info-box p {
+.price-card p, .package-card p, .service-card p {
   color: #1a4dff;
-}
-
-.contact-form h2 {
-  color: #800020;
-  margin-bottom: 30px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.contact-form button {
-  background-color: #1a4dff;
-  color: #fff;
-  padding: 15px;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.contact-form button:hover {
-  background-color: #800020;
 }
 
 footer {
@@ -199,6 +167,7 @@ footer p {
   background-color: #f0e6e6;
 }
 
+/* Map */
 .map-wrapper iframe {
   border: 0;
   border-radius: 10px;
@@ -214,7 +183,7 @@ footer p {
 @media (max-width: 768px) {
   .container { flex-direction: column; text-align: center; }
   .contact-grid, .service-cards, .cards, .pricing-grid, .packages-grid { flex-direction: column; align-items: center; }
-  .card, .price-card, .package-card, .service-card, .contact-info-box, .contact-form { width: 90%; }
+  .card, .price-card, .package-card, .service-card { width: 90%; }
   .hero { padding: 100px 20px 60px; }
 }
 
