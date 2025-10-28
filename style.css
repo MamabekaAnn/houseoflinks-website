@@ -347,9 +347,9 @@ footer p {
 }
 
 .student-packages h3 {
-  color: #ffffff; /* White heading */
+  color: #800000; 
   margin-bottom: 30px;
-}
+
 
 .packages-grid {
   display: flex;
@@ -409,5 +409,6 @@ footer p {
     align-items: center;
   }
 }
+
 
 
