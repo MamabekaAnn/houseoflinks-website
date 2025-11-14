@@ -6,54 +6,76 @@
   <title>House of Links - Home</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
-<body>
+<body id="home">
 
   <header class="header">
     <div class="container header-container">
-         <img src="Logo.png" alt="Logo">
+      <img src="Logo.png" alt="Logo">
+
       <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="packages.html">packages</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+
+        <a href="#home" class="active">Home</a>
+
+        <div class="dropdown">
+          <a href="links-printing-solutions.html" class="dropdown-btn">Printing Solutions <i class="fas fa-caret-down"></i></a>
+
+          <div class="dropdown-menu">
+            <a href="links-printing-solutions.html#internet-cafe">Internet Café</a>
+            <a href="links-printing-solutions.html#it-services">IT Services</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="links-cleaning.html" class="dropdown-btn">Cleaning Services <i class="fas fa-caret-down"></i></a>
+
+          <div class="dropdown-menu">
+            <a href="links-cleaning.html#car-wash">Car Wash</a>
+            <a href="links-cleaning.html#commercial & domestic cleaning ">commercial & domestic cleaning</a>
+            <a href="links-cleaning.html#sneaker links ">sneaker-links</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
 
   <section class="hero">
-    <h1>Your all in one hub.</h1>
+    <h1>Your al</h1>
     <p>High-Speed Internet Café Access | Creative Website Development | Company Registration | IT & Technical Support | Office & Academic Services.</p>
-    <a href="contact.html" class="btn">Contact Us</a>
+    <a href="#contact" class="btn">Contact Us</a>
   </section>
 
+
+  
   <section class="services-home">
     <h2 class="section-title" style="text-align:center;">What We Offer</h2>
     <div class="service-cards" style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; text-align:center;">
 
-      <a href="services.html" class="service-card" style="text-decoration:none; color:inherit;">
+      <a href="#services" class="service-card" style="text-decoration:none; color:inherit;">
         <i class="fas fa-laptop"></i>
         <h3>Internet Café Services</h3>
         <p>Access high-speed internet, printing, scanning, and online services in a comfortable café setting.</p>
       </a>
 
-      <a href="pricing.html" class="service-card" style="text-decoration:none; color:inherit;">
+      <a href="#packages" class="service-card" style="text-decoration:none; color:inherit;">
         <i class="fas fa-gamepad"></i>
         <h3>Website Development & Company Registration</h3>
-<p>Professional website development and seamless company registration services to help your business grow.</p>
+        <p>Professional website development and seamless company registration for your business.</p>
       </a>
 
       <div class="service-card">
         <i class="fas fa-wifi"></i>
-       <h3>IT & Technical Support</h3>
-<p>Expert IT and technical support to keep your systems running smoothly and efficiently.</p>
+        <h3>IT & Technical Support</h3>
+        <p>Expert IT and technical support to keep your systems running smoothly.</p>
       </div>
 
       <div class="service-card">
         <i class="fas fa-coffee"></i>
-       <h3>Office & Academic Services</h3>
-<p>Efficient solutions for office work, assignments, and academic projects.</p>
+        <h3>Office & Academic Services</h3>
+        <p>Efficient solutions for office work, assignments, and academic projects.</p>
       </div>
+    </div>
   </section>
 
   <section class="why-choose-us">
@@ -61,18 +83,81 @@
     <div class="cards">
       <div class="card">
         <h3>Reliable Internet</h3>
-        <p>Enjoy a fast and stable internet connection you can count on every day.</p>
+        <p>Enjoy a fast and stable internet connection every day.</p>
       </div>
       <div class="card">
         <h3>Affordable Packages</h3>
-        <p>We offer flexible pricing designed to fit your needs and your budget.</p>
+        <p>Flexible pricing designed to fit your budget.</p>
       </div>
       <div class="card">
         <h3>24/7 Support</h3>
-        <p>Our team is always ready to assist you with any issues or questions.</p>
+        <p>We’re always available to assist you.</p>
       </div>
     </div>
   </section>
+
+  <main class="contact-page" id="contact">
+    <h2 class="section-title"><center>Get in Touch</center></h2>
+    <p class="section-subtitle"><center>We’d love to hear from you! Visit us, call, or send a message.</center></p>
+
+    <div class="contact-grid">
+
+      <div class="contact-info-box">
+        <div class="info-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Address</h3>
+            <p>1586 Matebele street Mahwelereng Zone 1, Next To Roma Church</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h3>Phone</h3>
+            <p>072 390 1995 / 076 995 5099</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:contactus@houseoflinks.tech">contactus@houseoflinks.tech</a></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h3>Hours</h3>
+            <p>7:00 AM - 7:00 PM (Daily)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <input type="text" id="subject" name="title" placeholder="Subject" required>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="map-wrapper" style="width: 100%; margin-top: 40px;">
+      <iframe
+        src="https://www.google.com/maps?q=-24.144161146535243,28.984066725154506&hl=en&z=17&output=embed"
+        width="100%"
+        height="500"
+        style="border:0; border-radius:0;"
+        loading="lazy">
+      </iframe>
+    </div>
+  </main>
 
   <footer class="footer">
     <div class="container">
@@ -82,10 +167,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
