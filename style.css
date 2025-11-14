@@ -349,7 +349,7 @@ footer p {
 .student-packages h3 {
   color: #800000; 
   margin-bottom: 30px;
-
+}
 
 .packages-grid {
   display: flex;
@@ -410,5 +410,59 @@ footer p {
   }
 }
 
+    .nav {
+      position: relative;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
 
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 5px;
+    }
 
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-btn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-btn i {
+      margin-left: 6px;
+      font-size: 12px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: #0f0781;
+      padding: 10px 0;
+      min-width: 180px;
+      border-radius: 5px;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .dropdown-menu a {
+      padding: 10px 15px;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: #559bf7;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
