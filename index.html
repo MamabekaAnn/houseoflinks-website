@@ -1,214 +1,557 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>House of Links - Home</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-</head>
-<body id="home">
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f7f8;
+  padding-top: 80px;
+}
 
-  <header class="header">
-    <div class="container header-container">
-      <img src="Logo.png" alt="Logo">
+header {
+  background-color: #ffffff;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-      <nav class="nav">
+header .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        <a href="#home" class="active">Home</a>
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #800020;
+}
 
-        <div class="dropdown">
-          <a href="links-printing-solutions.html" class="dropdown-btn">Printing Solutions <i class="fas fa-caret-down"></i></a>
+header .nav a {
+  color: #1a4dff;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
 
-          <div class="dropdown-menu">
-            <a href="links-printing-solutions.html#internet-cafe">Internet Café</a>
-            <a href="links-printing-solutions.html#it-services">IT Services</a>
-          </div>
-        </div>
+header .nav a:hover,
+header .nav a.active {
+  color: #800020;
+}
 
-        <div class="dropdown">
-          <a href="links-cleaning.html" class="dropdown-btn">Cleaning Services <i class="fas fa-caret-down"></i></a>
+.hero {
+  background: linear-gradient(to right, #1a4dff, #800020);
+  color: #ffffff;
+  text-align: center;
+  padding: 120px 20px 80px;
+}
 
-          <div class="dropdown-menu">
-            <a href="links-cleaning.html#car-wash">Car Wash</a>
-            <a href="links-cleaning.html#commercial & domestic cleaning ">commercial & domestic cleaning</a>
-            <a href="links-cleaning.html#sneaker links ">sneaker-links</a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
 
-  <section class="hero">
-    <h1></h1>
-    <p>High-Speed Internet Café Access | Creative Website Development | Company Registration | IT & Technical Support | Office & Academic Services.</p>
-    <a href="#contact" class="btn">Contact Us</a>
-  </section>
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-<section class="about" id="about">
-  <div class="about-container">
+.hero .btn {
+  background-color: #ffffff;
+  color: #1a4dff;
+  padding: 15px 35px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #c46b6b;
+  color: #fff;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #800020;
+  margin-bottom: 50px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #1a4dff;
+  margin-bottom: 40px;
+}
+
+.cards, .pricing-grid, .service-cards, .packages-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card, .price-card, .package-card, .service-card, .contact-info-box, .contact-form {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover, .price-card:hover, .package-card:hover, .service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card h3, .price-card h3, .package-card h4, .service-card h3 {
+  color: #800020;
+  margin-bottom: 15px;
+}
+
+.price-card p, .package-card p, .service-card p, .contact-info-box p {
+  color: #1a4dff;
+}
+
+.contact-form h2 {
+  color: #800020;
+  margin-bottom: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #1a4dff;
+  color: #fff;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #800020;
+}
+
+footer {
+  background-color: #ffffff;
+  color: #1a4dff;
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 2px solid #800020;
+}
+
+footer p {
+  margin: 0;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 60px;
+}
+
+.price-table th,
+.price-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.price-table th {
+  background-color: #800020;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.price-table tr:nth-child(even) {
+  background-color: #f0e6e6;
+}
+
+.map-wrapper iframe {
+  border: 0;
+  border-radius: 10px;
+  width: 100%;
+  height: 500px;
+}
+
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 2.5rem; }
+  .hero p { font-size: 1.1rem; }
+}
+
+@media (max-width: 768px) {
+  .container { flex-direction: column; text-align: center; }
+  .contact-grid, .service-cards, .cards, .pricing-grid, .packages-grid { flex-direction: column; align-items: center; }
+  .card, .price-card, .package-card, .service-card, .contact-info-box, .contact-form { width: 90%; }
+  .hero { padding: 100px 20px 60px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  header .nav a { margin: 5px; font-size: 0.9rem; }
+}
+
+.contact-page {
+  padding: 80px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #800020;
+  margin-bottom: 50px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #1a4dff;
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-info-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info-box .info-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-info-box .info-card i {
+  font-size: 1.5rem;
+  color: #a13a3a;
+}
+
+.contact-info-box .info-card h3 {
+  margin: 0 0 5px 0;
+  color: #800020;
+}
+
+.contact-info-box .info-card a {
+  color: #800020;
+  text-decoration: underline;
+}
+
+.contact-info-box .info-card a:hover {
+  color: #a13a3a;
+}
+
+.contact-form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: #800020;
+  margin-bottom: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #800020;
+  color: #ffffff;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #a13a3a;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 500px;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column;
+  }
+}
+
+.student-packages {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.student-packages h3 {
+  color: #800000; 
+  margin-bottom: 30px;
+}
+
+.packages-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.package-card {
+  background-color: #800000;
+  border-radius: 12px;
+  text-align: center;
+  padding: 25px;
+  width: 280px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #ffffff;
+}
+
+.package-card h4,
+.package-card ul,
+.package-card li,
+.package-card strong {
+  color: #ffffff;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.discount-banner.student-discount {
+  background-color: #6B0F1A;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.discount-banner.student-discount i,
+.discount-banner.student-discount h4 {
+  color: #ffffff;
+}
+
+.discount-banner.student-discount:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .packages-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+    .nav {
+      position: relative;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 5px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-btn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-btn i {
+      margin-left: 6px;
+      font-size: 12px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: #0f0781;
+      padding: 10px 0;
+      min-width: 180px;
+      border-radius: 5px;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .dropdown-menu a {
+      padding: 10px 15px;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: #559bf7;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
     
-    <div class="about-image picmix-grid">
-  <img src="Printer.jpg" alt="internet cafe">
-  <img src="web.jpg" alt="website development">
-  <img src="Services.jpg" alt="Links Services">
-  <img src="Car.jpg" alt="Car Wash">
-  <img src="sneak.jpg" alt="Sneaker Links">
-</div>
+.about {
+  padding: 80px 5%;
+  background: #f9fafc;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.about-image,
+.about-content {
+  flex: 1;           
+  min-width: 0;        
+}
 
 
-    <div class="about-content">
-      <h2 class="section-title">About us</h2>
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
 
-      <p>
-        House of Links is a multi-service brand dedicated to providing convenient, reliable, and professional solutions for our community.
-        We operate through three divisions, each built to support everyday needs and deliver high-quality services under one trusted name.
-      </p>
 
-      <p>
-        The first division, <strong>Links Printing Solutions</strong>, focuses on digital, internet, and technology services.
-        This includes internet café access, printing services, IT support, website development, and company registration assistance.
-      </p>
+.about-content {
+  line-height: 1.7;
+}
 
-      <p>
-        The second division, <strong>Links Cleaning</strong>, provides dependable cleaning solutions for homes, businesses, vehicles,
-        and sneaker care through Sneakers Links all aimed at providing fresh, clean, and professional results.
-      </p>
+.about-content h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #1d4ce7;
+}
 
-      <p>
-        The third division is <strong>Links Driving School</strong>.
-        <a href="#" class="info-link">Click here for more info</a>
-      </p>
+.about-content p {
+  margin: 18px 0;
+  color: #444;
+  font-size: 16px;
+}
 
-       <p class="mission">
-        Our mission is to bring value, convenience, and quality together.  
-        Whether you need digital assistance, cleaning support, or driving school services, we are here to serve you with excellence.
-      </p>
+.info-link {
+  color: #0a58ca;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-<h2 class="section-title">Updates</h2>
-<img src="Driving School.png" alt="Links Updates"> 
-    </div>
-  </div>
-</section>
-  
-  <section class="services-home">
-    <h2 class="section-title" style="text-align:center;">What We Offer</h2>
-    <div class="service-cards" style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; text-align:center;">
+.info-link:hover {
+  text-decoration: underline;
+}
 
-      <a href="#services" class="service-card" style="text-decoration:none; color:inherit;">
-        <i class="fas fa-laptop"></i>
-        <h3>Internet Café Services</h3>
-        <p>Access high-speed internet, printing, scanning, and online services in a comfortable café setting.</p>
-      </a>
+.mission {
+  margin-top: 25px;
+  background: #eef3ff;
+  padding: 14px 16px;
+  border-left: 4px solid #0a58ca;
+  border-radius: 6px;
+  font-weight: 500;
+}
 
-      <a href="#packages" class="service-card" style="text-decoration:none; color:inherit;">
-        <i class="fas fa-globe"></i>
-        <h3>Website Development & Company Registration</h3>
-        <p>Professional website development and seamless company registration for your business.</p>
-      </a>
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
 
-      <div class="service-card">
-      <i class="fas fa-tools"></i>
-        <h3>IT & Technical Support</h3>
-        <p>Expert IT and technical support to keep your systems running smoothly.</p>
-      </div>
+  .about-image img {
+    height: auto;
+  }
+}
 
-      <a href="#services" class="service-card" style="text-decoration:none; color:inherit;">
-    <i class="fas fa-broom"></i>
-    <h3>Cleaning Services</h3>
-    <p>Professional cleaning services for homes, offices, cars, and even sneakers. We handle domestic, commercial, car wash, and sneaker cleaning with care.</p>
-</a>
+.picmix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 15px;
+}
 
-  </section>
-
-  <section class="why-choose-us">
-    <h2 class="section-title">Why Choose Us</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Reliable Internet</h3>
-        <p>Enjoy a fast and stable internet connection every day.</p>
-      </div>
-      <div class="card">
-        <h3>Affordable Packages</h3>
-        <p>Flexible pricing designed to fit your budget.</p>
-      </div>
-     <div class="card">
-  <h3>All in One Solutions</h3>
-  <p>we’ve got everything you need under one roof.</p>
-</div>
-
-    </div>
-  </section>
-
-  <main class="contact-page" id="contact">
-    <h2 class="section-title"><center>Get in Touch</center></h2>
-    <p class="section-subtitle"><center>We’d love to hear from you! Visit us, call, or send a message.</center></p>
-
-    <div class="contact-grid">
-
-      <div class="contact-info-box">
-        <div class="info-card">
-          <i class="fas fa-map-marker-alt"></i>
-          <div>
-            <h3>Address</h3>
-            <p>1586 Matebele str, Mahwelereng Zone 1, Next to Roma Church</p>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <i class="fas fa-phone"></i>
-          <div>
-            <h3>Phone</h3>
-            <p>072 390 1995 / 076 995 5099</p>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <i class="fas fa-envelope"></i>
-          <div>
-            <h3>Email</h3>
-            <p><a href="mailto:contactus@houseoflinks.tech">contactus@houseoflinks.tech</a></p>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <i class="fas fa-clock"></i>
-          <div>
-            <h3>Hours</h3>
-            <p>8:00 AM - 7:00 PM (Daily)</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-form">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-          <input type="text" id="subject" name="title" placeholder="Subject" required>
-          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="map-wrapper" style="width: 100%; margin-top: 40px;">
-      <iframe
-        src="https://www.google.com/maps?q=-24.144161146535243,28.984066725154506&hl=en&z=17&output=embed"
-        width="100%"
-        height="500"
-        style="border:0; border-radius:0;"
-        loading="lazy">
-      </iframe>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 House of Links. Open daily 8AM - 7PM.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+.picmix-grid img:nth-child(1) {
+  grid-column: span 2;
+  height: 250px;
+}
