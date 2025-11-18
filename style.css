@@ -533,7 +533,6 @@ footer p {
   font-weight: 500;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .about-container {
     flex-direction: column;
@@ -543,4 +542,16 @@ footer p {
   .about-image img {
     height: auto;
   }
+}
+
+.picmix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 15px;
+}
+
+.picmix-grid img:nth-child(1) {
+  grid-column: span 2;
+  height: 250px;
 }
