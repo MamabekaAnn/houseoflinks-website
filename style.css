@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +8,6 @@ body {
   font-family: "Inter", sans-serif;
   background: #0d0f14;
   color: #dbe1ff;
-
-
   line-height: 1.6;
   padding-top: 90px;
 }
@@ -115,21 +112,20 @@ header .container {
 
 .hero {
   text-align: center;
-  padding: 150px 20px 120px;
-  background: 
-    linear-gradient(135deg, rgba(14, 19, 32, 0.7), rgba(6, 20, 36, 0.7), rgba(13, 35, 64, 0.7)),
-    url('Printer.jpg') center/cover no-repeat; 
+  padding: 100px 15px 95px;
+  background: linear-gradient(135deg, rgba(14, 19, 32, 0.7), rgba(6, 20, 36, 0.7), rgba(13, 35, 64, 0.7)),
+              url('Printer.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #dbe1ff;
+  color: #ff8a00;
 }
 
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
-  color: white;
+  color: #7aa2ff;
   text-align: center;
   animation: fade 1s ease-in-out;
 }
@@ -142,9 +138,9 @@ header .container {
 .hero p {
   max-width: 620px;
   margin: auto;
-  font-size: 1.15rem;
+  font-size: 1rem;
   opacity: 0.9;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .hero .btn {
@@ -158,12 +154,6 @@ header .container {
   border: 1px solid #2e3c5d;
   box-shadow: 0 0 12px rgba(122,162,255,0.3);
 }
-
-@keyframes fade {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
 
 .hero .btn:hover {
   background: #7aa2ff;
@@ -364,4 +354,35 @@ footer p {
   }
 }
 
+.service-card {
+  background: #131726;
+  width: 300px;
+  padding: 35px 25px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.5);
+  transition: 0.3s;
+  border: 1px solid #1f2a40;
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.service-card h3 {
+  color: #7aa2ff; 
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #ffffff;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #7aa2ff, 0 0 40px rgba(122,162,255,0.6);
+}
+
+.service-card a {
+  color: inherit;
+  text-decoration: none;
+}
 
