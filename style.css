@@ -112,7 +112,7 @@ header .container {
 
 .hero {
   text-align: center;
-  padding: 100px 15px 95px;
+   padding: 150px 15px 150px;
   background: linear-gradient(135deg, rgba(14, 19, 32, 0.7), rgba(6, 20, 36, 0.7), rgba(13, 35, 64, 0.7)),
               url('Printer.jpg') center/cover no-repeat;
   display: flex;
@@ -386,3 +386,39 @@ footer p {
   text-decoration: none;
 }
 
+.site-header {
+    background: rgba(0, 0, 50, 0.6);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.back-tab {
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    color: cyan;
+    font-size: 1.1rem;
+}
+
+.nav-tabs {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-tabs a {
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,255,255,0.2);
+}
+
+.nav-tabs a:hover {
+    background: cyan;
+    color: black;
+}
