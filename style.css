@@ -112,7 +112,7 @@ header .container {
 
 .hero {
   text-align: center;
-   padding: 150px 15px 150px;
+   padding: 200px 20px 200px;
   background: linear-gradient(135deg, rgba(14, 19, 32, 0.7), rgba(6, 20, 36, 0.7), rgba(13, 35, 64, 0.7)),
               url('Printer.jpg') center/cover no-repeat;
   display: flex;
@@ -422,3 +422,4 @@ footer p {
     background: cyan;
     color: black;
 }
+
