@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Links Printing Solutions</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
   <style>
     .tabs {
       display: flex;
@@ -71,23 +73,23 @@
     }
   </style>
 </head>
+
 <body>
 
 <header class="header">
   <div class="container header-container">
     <div class="logo">Links Printing Solutions</div>
+
     <nav class="nav">
       <a href="index.html">Back to House Of Links</a>
-      <a href="#printing-tab">Printing & Graphics</a>
-      <a href="#it-tab">IT Services</a>
+      <a href="#" class="nav-link" data-tab-target="printing">Printing & Graphics</a>
+      <a href="#" class="nav-link" data-tab-target="it">IT Services</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  </section>
-
-
+</section>
 
 <div class="tabs">
   <button class="tab-btn active" data-tab="welcome">Welcome</button>
@@ -96,43 +98,46 @@
 </div>
 
 <section id="welcome-tab" class="tab-content active">
-  <h2 class="section-title">Welcome</h2>
+  <h2 class="section-title" style="text-align:center; color:#ff8a00;">Welcome</h2>
   <p style="text-align:center; max-width:700px; margin:0 auto;">
     We provide premium printing, branding, graphic design, and IT services to help your business or project thrive. Explore our services by selecting a tab above.
   </p>
 </section>
-
 <section id="printing-tab" class="tab-content">
   <div class="tab-feature">
     <div class="tab-feature-item">
-      <i class="fas fa-print"></i>
-      <h3>Branding & Promotional Materials</h3>
-      <p>Business cards, flyers, banners, and brochures designed to grow your brand.</p>
-    </div>
+  <i class="fas fa-wifi"></i>
+  <h3>Internet Café Services</h3>
+  <p>High-speed internet access with printing and scanning facilities.</p>
+  <a href="internet-cafe.html" style="color:#7aa2ff; text-decoration:underline;">View Price List</a>
+</div>
     <div class="tab-feature-item">
-      <i class="fas fa-paint-brush"></i>
-      <h3>Graphic Design</h3>
-      <p>Custom designs for personal and business projects with a modern aesthetic.</p>
-    </div>
-  </div>
+  <i class="fas fa-print"></i>
+  <h3>Branding & Promotional Materials</h3>
+  <p>Business cards, flyers, banners, and brochures designed to grow your brand.</p>
+  <a href="branding.html" target="_blank" style="color:#7aa2ff; text-decoration:underline;">View Details</a>
+</div>
+
+    <div class="tab-feature-item">
+  <i class="fas fa-paint-brush"></i>
+  <h3>Graphic Design</h3>
+  <p>Custom designs for personal and business projects with a modern touch.</p>
+  <a href="graphic-design.html" target="_blank" style="color:#7aa2ff; text-decoration:underline;">View Details</a>
+</div>
 </section>
 
 <section id="it-tab" class="tab-content">
   <div class="tab-feature">
     <div class="tab-feature-item">
+      <i class="fas fa-globe"></i>
+      <h3>Website Development & Company Registration</h3>
+      <p>Professional website design and seamless business registration services.</p>
+      <a href="website.html" style="color:#6a8dff; text-decoration:underline;">View Details</a>
+    </div>
+    <div class="tab-feature-item">
       <i class="fas fa-laptop"></i>
       <h3>IT & Technical Support</h3>
       <p>Expert troubleshooting, maintenance, and support for your systems.</p>
-    </div>
-    <div class="tab-feature-item">
-      <i class="fas fa-globe"></i>
-      <h3>Website Development & Registration</h3>
-      <p>Professional website design and seamless business registration services.</p>
-    </div>
-    <div class="tab-feature-item">
-      <i class="fas fa-wifi"></i>
-      <h3>Internet Café Services</h3>
-      <p>High-speed internet access with printing and scanning facilities.</p>
     </div>
   </div>
 </section>
@@ -140,13 +145,33 @@
 <script>
 const tabs = document.querySelectorAll('.tab-btn');
 const contents = document.querySelectorAll('.tab-content');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function activateTab(tabName) {
+  tabs.forEach(t => t.classList.remove('active'));
+  const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  if (tabBtn) tabBtn.classList.add('active');
+
+  contents.forEach(c => c.classList.remove('active'));
+  const tabContent = document.getElementById(`${tabName}-tab`);
+  if (tabContent) tabContent.classList.add('active');
+
+  const tabsContainer = document.querySelector('.tabs');
+  if (tabsContainer) {
+    tabsContainer.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    contents.forEach(c => c.classList.remove('active'));
-    document.getElementById(tab.dataset.tab + '-tab').classList.add('active');
+    activateTab(tab.dataset.tab);
+  });
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    activateTab(link.dataset.tabTarget);
   });
 });
 </script>
@@ -157,4 +182,3 @@ tabs.forEach(tab => {
 
 </body>
 </html>
-
