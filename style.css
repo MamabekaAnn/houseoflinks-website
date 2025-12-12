@@ -464,3 +464,11 @@ footer p {
     display: none;
   }
 }
+
+.hidden-content {
+  display: none;
+}
+
+.hidden-content.show {
+  display: block;
+}
