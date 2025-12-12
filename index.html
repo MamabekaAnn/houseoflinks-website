@@ -12,7 +12,12 @@
 
   <header class="header">
     <div class="container header-container">
-      <div class="logo">
+      <div class="logo>
+<div class="lines-menu">
+  <div class="line" data-target="content1"></div>
+  <div class="line" data-target="content2"></div>
+  <div class="line" data-target="content3"></div>
+</div>
         House of links<span class="tm">™</span>
       </div>
 
@@ -39,6 +44,9 @@
       </nav>
     </div>
   </header>
+  <div id="content1" class="hidden-content">First content…</div>
+<div id="content2" class="hidden-content">Second content…</div>
+<div id="content3" class="hidden-content">Third content…</div>
 
   <section class="hero">
     <h1>Welcome to House of Links</h1>
@@ -207,6 +215,14 @@
       <p>&copy; 2025 House of Links. Open daily 8AM - 7PM.</p>
     </div>
   </footer>
-
+<script>
+document.querySelectorAll(".line").forEach(line => {
+  line.addEventListener("click", function () {
+    const target = document.getElementById(this.dataset.target);
+    target.classList.toggle("show");
+  });
+});
+  </script>
 </body>
 </html>
+
