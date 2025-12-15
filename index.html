@@ -6,23 +6,80 @@
   <title>House of Links - Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Hamburger Styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      color: #7aa2ff;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: currentColor;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        background: #131726;
+        padding: 15px;
+        border-radius: 8px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 220px;
+        box-shadow: 0 0 15px rgba(122,162,255,0.3);
+        z-index: 999;
+      }
+
+      .nav.show {
+        display: flex;
+      }
+
+      /* Ensure dropdown menus fit inside mobile nav */
+      .nav .dropdown-menu {
+        position: static;
+        background: #131726;
+        border: none;
+        box-shadow: none;
+        padding-left: 10px;
+      }
+
+      .nav .dropdown:hover .dropdown-menu {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body id="home">
 
   <header class="header">
     <div class="container header-container">
       <div class="logo">
-        House of Links<span class="tm">™</span>
+        House of links<span class="tm">™</span>
       </div>
 
-      <div class="lines-menu">
-        <div class="line" data-target="content1"></div>
-        <div class="line" data-target="content2"></div>
-        <div class="line" data-target="content3"></div>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" id="navMenu">
         <a href="index.html" class="active">Home</a>
 
         <div class="dropdown">
@@ -36,7 +93,7 @@
         <div class="dropdown">
           <a href="links-cleaning.html" class="dropdown-btn">Cleaning Services <i class="fas fa-caret-down"></i></a>
           <div class="dropdown-menu">
-            <a href="links-cleaning.html#sneakers-cleaning">Sneakers Cleaning</a>
+            <a href="links-cleaning.html#sneakers-cleanining">Sneakers Cleaning</a>
             <a href="links-cleaning.html#car-wash">Car Wash</a>
             <a href="links-cleaning.html#commercial-cleaning">Commercial Cleaning</a>
             <a href="links-cleaning.html#domestic-cleaning">Domestic Cleaning</a>
@@ -45,10 +102,6 @@
       </nav>
     </div>
   </header>
-
-  <div id="content1" class="hidden-content">First content…</div>
-  <div id="content2" class="hidden-content">Second content…</div>
-  <div id="content3" class="hidden-content">Third content…</div>
 
   <section class="hero">
     <h1>Welcome to House of Links</h1>
@@ -63,8 +116,7 @@
         <p>
           Our Main/Parent Company is <strong>Links Prosols</strong>.  
           <strong>House of Links</strong> is its Marketing, Management, and Communication division,  
-          overseeing the branches.
-          We are a multi-service brand dedicated to providing convenient, reliable, and professional solutions for our community.
+          overseeing the branches. We are a multi-service brand dedicated to providing convenient, reliable, and professional solutions for our community.
           We operate through three divisions, each built to support everyday needs and deliver high-quality services under one trusted name.
           The first division, <strong>Links Printing Solutions</strong>, focuses on digital, internet, and technology services.
           This includes internet café access, printing services, IT support, website development, and company registration assistance.
@@ -101,9 +153,9 @@
         <p>Professional website development and seamless company registration for your business.</p>
       </a>
 
-      <a href="links-cleaning.html#sneakers-cleaning" class="service-card">
+      <a href="links-cleaning.html#sneakers-links" class="service-card">
         <i class="fas fa-shoe-prints"></i>
-        <h3>Sneakers Cleaning</h3>
+        <h3>Sneakers Ceaning</h3>
         <p>Professional sneaker cleaning and care.</p>
       </a>
 
@@ -218,14 +270,14 @@
     </div>
   </footer>
 
-<script>
-document.querySelectorAll(".line").forEach(line => {
-  line.addEventListener("click", function () {
-    const target = document.getElementById(this.dataset.target);
-    if(target) target.classList.toggle("show");
-  });
-});
-</script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+  </script>
 
 </body>
 </html>
