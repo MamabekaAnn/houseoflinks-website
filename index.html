@@ -50,15 +50,19 @@
         display: flex;
       }
 
-      /* Ensure dropdown menus fit inside mobile nav */
+      /* Dropdowns in mobile menu */
       .nav .dropdown-menu {
-        position: static;
-        background: #131726;
-        border: none;
-        box-shadow: none;
+        display: none;
+        flex-direction: column;
         padding-left: 10px;
+        background: #131726;
       }
 
+      .nav .dropdown.active .dropdown-menu {
+        display: flex;
+      }
+
+      /* Remove desktop hover effect on mobile */
       .nav .dropdown:hover .dropdown-menu {
         display: none;
       }
@@ -273,9 +277,18 @@
   <script>
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
+    const dropdowns = document.querySelectorAll('.nav .dropdown');
 
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('show');
+    });
+
+    // Toggle dropdown menus on mobile
+    dropdowns.forEach(drop => {
+      drop.querySelector('.dropdown-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        drop.classList.toggle('active');
+      });
     });
   </script>
 
