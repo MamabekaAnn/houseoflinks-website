@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Website Pricing — Links Printing Solutions</title>
+<title>Website Pricing</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
@@ -16,6 +16,68 @@
     color: #dbe1ff;
     margin: 0;
     padding: 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .header .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #dbe1ff;
+    font-weight: 500;
+  }
+
+  .nav a.active {
+    color: #7aa2ff;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #dbe1ff;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .nav {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background: Colorless;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .nav.show {
+      display: flex;
+    }
   }
 
   .pricing-header {
@@ -117,21 +179,28 @@
 
 <body>
 <header class="header">
-    <nav class="nav">
-       <a href="index.html">Back to House of Links</a>
-      <a href="internet-cafe.html">Internet Café Services</a>
-       <a href="branding.html">Branding & Promo</a>
-       <a href="graphic-design.html">Graphic Design</a>
-      <a href="website.html" class="active">Website Development & Company Registration</a>
-       <a href="it-and-technical-support.html">IT & Technical Support</a>
-    </nav>
+  <div class="logo">Links Printing Solutions</div>
+
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
+
+  <nav class="nav" id="navMenu">
+    <a href="index.html">Back to House of Links</a>
+    <a href="internet-cafe.html">Internet Café Services</a>
+    <a href="branding.html">Branding & Promo</a>
+    <a href="graphic-design.html">Graphic Design</a>
+    <a href="website.html" class="active">Website Development & Company Registration</a>
+    <a href="it-and-technical-support.html">IT & Technical Support</a>
+  </nav>
 </header>
 
 <section class="hero">
   <h1>Website development & Company Registration</h1>
-    <p>Professional website design and seamless business registration services.</p>
-    <a href="index.html#contact" class="btn">Contact Us</a>
+  <p>Professional website design and seamless business registration services.</p>
+  <a href="index.html#contact" class="btn">Contact Us</a>
 </section>
 
 <div style="height:40px;"></div>
@@ -275,5 +344,13 @@
   &copy; 2025 Links Printing Solutions. Open daily 8AM - 7PM.
 </footer>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
 </body>
 </html>
