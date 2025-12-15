@@ -92,10 +92,13 @@
         display: flex;
       }
 
-      .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
       .nav {
         display: none;
@@ -115,7 +118,7 @@
 <body>
 
 <header class="header">
-  <div class="container header-container">
+  <div class="container header-container" style="display:flex; justify-content:space-between; align-items:center;">
     <div class="logo">Links Printing Solutions</div>
 
     <div class="hamburger" id="hamburger">
@@ -243,4 +246,5 @@
 
 </body>
 </html>
+
 
