@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta viewport="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Links Printing Solutions</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
@@ -72,66 +72,44 @@
       color: #dbe1ff;
     }
 
+    /* HAMBURGER MENU */
     .hamburger {
       display: none;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
       cursor: pointer;
     }
+
     .hamburger div {
       width: 30px;
       height: 4px;
       background-color: currentColor;
       border-radius: 2px;
       transition: 0.3s;
-    } 
-    
-  .nav {
-    display: flex;
-    gap: 20px;
-  }
-
-  .nav a {
-    text-decoration: none;
-    color:  #7aa2ff;
-    font-size: 0.95rem;
-    font-weight: 600;
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
-
-  .hamburger div {
-    width: 30px;
-    height: 4px;
-    background-color: #333;
-    border-radius: 2px;
-    transition: 0.3s;
-  }
-
-  @media (max-width: 768px) {
-    .hamburger {
-      display: flex;
     }
 
-    .nav {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      background: #131726;
-      padding: 10px;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
 
-    .nav.show {
-      display: flex;
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .nav.show {
+        display: flex;
+      }
     }
-  }
   </style>
 </head>
 
@@ -170,8 +148,7 @@
 <section id="welcome-tab" class="tab-content active">
   <h2 class="section-title" style="text-align:center; color:#ff8a00;">Welcome</h2>
   <p style="text-align:center; max-width:700px; margin:0 auto;">
-    We provide premium printing, branding, graphic design, and IT services to help your business or project thrive.
-    Explore our services by selecting a tab above.
+    We provide premium printing, branding, graphic design, and IT services to help your business or project thrive. Explore our services by selecting a tab above.
   </p>
 </section>
 
@@ -219,40 +196,46 @@
 </section>
 
 <script>
-const tabs = document.querySelectorAll('.tab-btn');
-const contents = document.querySelectorAll('.tab-content');
-const navLinks = document.querySelectorAll('.nav-link');
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
+  // TAB SYSTEM
+  const tabs = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.tab-content');
+  const navLinks = document.querySelectorAll('.nav-link');
 
-function activateTab(tabName) {
-  tabs.forEach(t => t.classList.remove('active'));
-  const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
-  if (tabBtn) tabBtn.classList.add('active');
+  function activateTab(tabName) {
+    tabs.forEach(t => t.classList.remove('active'));
+    const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+    if (tabBtn) tabBtn.classList.add('active');
 
-  contents.forEach(c => c.classList.remove('active'));
-  const tabContent = document.getElementById(`${tabName}-tab`);
-  if (tabContent) tabContent.classList.add('active');
+    contents.forEach(c => c.classList.remove('active'));
+    const tabContent = document.getElementById(`${tabName}-tab`);
+    if (tabContent) tabContent.classList.add('active');
 
-  document.querySelector('.tabs').scrollIntoView({ behavior: 'smooth' });
+    const tabsContainer = document.querySelector('.tabs');
+    if (tabsContainer) {
+      tabsContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
-  navMenu.classList.remove('show'); // close on mobile
-}
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => activateTab(tab.dataset.tab));
-});
-
-navLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    activateTab(link.dataset.tabTarget);
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      activateTab(tab.dataset.tab);
+    });
   });
-});
 
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('show');
-});
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      activateTab(link.dataset.tabTarget);
+    });
+  });
+
+  // HAMBURGER FUNCTION
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
 </script>
 
 <footer class="footer" style="background:#0f1117; text-align:center; padding:30px; border-top:1px solid #1c2333; color:#7aa2ff;">
@@ -261,4 +244,3 @@ hamburger.addEventListener('click', () => {
 
 </body>
 </html>
-
