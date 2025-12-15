@@ -1,57 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IT & Technical Support | Links Printing Solutions</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IT & Technical Support | Links Printing Solutions</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-  <style>
-    body {
-      background: #0f1117;
-      color: #dbe1ff;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+  body {
+    background: #0f1117;
+    color: #dbe1ff;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-    .hero-2col {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  .header .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #7aa2ff;
+  }
+
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #7aa2ff;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .nav a.active {
+    color: #ff8a00;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    color: #7aa2ff;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: currentColor;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px;
-      margin: 60px auto;
-      max-width: 1200px;
-      padding: 20px;
     }
 
-    .hero-2col .hero-text {
-      flex: 1;
-      max-width: 500px;
+    .nav {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      background: #131726;
+      padding: 15px;
+      border-radius: 8px;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 220px;
+      box-shadow: 0 0 15px rgba(122,162,255,0.3);
     }
 
-    .hero-2col .hero-text h2 {
-      font-size: 2rem;
-      color: #7aa2ff;
-      margin-bottom: 20px;
+    .nav.show {
+      display: flex;
     }
+  }
 
-    .hero-2col .hero-text p {
-      font-size: 1.1rem;
-      color: #dbe1ff;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
+  .hero {
+    text-align: center;
+    padding: 80px 20px 40px 20px;
+  }
 
-    .hero-2col .hero-photo {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
-    }
+  .hero h1 {
+    font-size: 2.5rem;
+    color: #7aa2ff;
+    margin-bottom: 20px;
+  }
 
-    .back-link {
+  .hero p {
+    font-size: 1.1rem;
+    color: #dbe1ff;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    background: #ff8a00;
+    color: #0d1020;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #0f1117;
+    color: #7aa2ff;
+    border: 1px solid #7aa2ff;
+  }
+
+  .hero-2col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin: 60px auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+
+  .hero-2col .hero-text {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  .hero-2col .hero-text h2 {
+    font-size: 2rem;
+    color: #7aa2ff;
+    margin-bottom: 20px;
+  }
+
+  .hero-2col .hero-text p {
+    font-size: 1.1rem;
+    color: #dbe1ff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .hero-2col .hero-photo {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  .back-link {
     display: inline-block;
     margin: 40px auto;
     padding: 12px 25px;
@@ -69,24 +173,31 @@
     border: 1px solid #7aa2ff;
   }
 
-    @media (max-width: 900px) {
-      .hero-2col {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-2col .hero-photo {
-        max-width: 90%;
-      }
+  @media (max-width: 900px) {
+    .hero-2col {
+      flex-direction: column;
+      text-align: center;
     }
 
-  </style>
+    .hero-2col .hero-photo {
+      max-width: 90%;
+    }
+  }
+</style>
 </head>
 
 <body>
 
 <header class="header">
-  <nav class="nav">
+  <div class="logo">Links IT & Technical Support</div>
+
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav class="nav" id="navMenu">
     <a href="index.html">Back to House of Links</a>
     <a href="website.html">Website Development & Company Registration</a>
     <a href="graphic-design.html">Graphic Design</a>
@@ -105,12 +216,8 @@
 <section class="hero-2col">
   <div class="hero-text">
     <h2>Reliable IT Services</h2>
-    <p>
-      From hardware repairs to network troubleshooting, we provide complete IT solutions for your business and personal needs.
-    </p>
-    <p>
-      Our team of experts is ready to assist with everything from software setup to ongoing maintenance, ensuring your systems are always running smoothly.
-    </p>
+    <p>From hardware repairs to network troubleshooting, we provide complete IT solutions for your business and personal needs.</p>
+    <p>Our team of experts is ready to assist with everything from software setup to ongoing maintenance, ensuring your systems are always running smoothly.</p>
   </div>
 
   <img src="download.png" alt="IT Support Technician" class="hero-photo">
@@ -123,6 +230,15 @@
 <footer class="footer" style="background:#0f1117; text-align:center; padding:30px; border-top:1px solid #1c2333; color:#7aa2ff;">
   &copy; 2025 Links Printing Solutions. Open daily 8AM - 7PM.
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
