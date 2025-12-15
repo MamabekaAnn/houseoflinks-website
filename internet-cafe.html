@@ -1,95 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Links Printing Pricelist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Links Printing Pricelist</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', Helvetica, sans-serif;
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', Helvetica, sans-serif;
+    background: #131726;
+    color: #dbe1ff;
+  }
+
+  .hero {
+    padding: 100px 10px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    border-collapse: collapse;
+    text-align: left;
+    background: #0f1117;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(122,162,255,0.2);
+  }
+  th, td {
+    padding: 15px;
+    border-bottom: 1px solid #1c2333;
+  }
+  th {
+    background: #ff8a00;
+    color: #0d1020;
+  }
+  td {
+    color: #dbe1ff;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin: 40px auto;
+    padding: 12px 25px;
+    background: #7aa2ff;
+    color: #0d1020;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+  }
+  .back-link:hover {
+    background: #ff8a00;
+    color: #0d1020;
+    border: 1px solid #0f1117;
+  }
+
+  footer.footer {
+    background: #0f1117;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #1c2333;
+    color: #7aa2ff;
+  }
+
+  .nav a.active {
+    color: #ff8a00;
+  }
+
+  /* Hamburger styles */
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    color: #7aa2ff;
+    margin-left: 15px;
+  }
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: currentColor;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+    .nav {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
       background: #131726;
-      color: #dbe1ff;
-    }
-
-.hero {
-   padding: 100px 10px 100px;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-    table {
-      width: 90%;
-      max-width: 1000px;
-      margin: 0 auto 50px auto;
-      border-collapse: collapse;
-      text-align: left;
-      background: #0f1117;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(122,162,255,0.2);
-    }
-    th, td {
       padding: 15px;
-      border-bottom: 1px solid #1c2333;
-    }
-    th {
-      background:#ff8a00;;
-      color: #0d1020;
-    }
-    td {
-      color: #dbe1ff;
-    }
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin: 40px auto;
-      padding: 12px 25px;
-      background:  #7aa2ff;
-      color: #0d1020;
-      text-decoration: none;
       border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-      text-align: center;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 220px;
+      box-shadow: 0 0 15px rgba(122,162,255,0.3);
     }
-    .back-link:hover {
-      background: #ff8a00 ;
-      color:  #0d1020;
-      border: 1px solid #0f1117;
+    .nav.show {
+      display: flex;
     }
+  }
 
-    footer.footer {
-      background: #0f1117;
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #1c2333;
-      color: #7aa2ff;
-    }
-
-  </style>
+</style>
 </head>
 <body>
 
-
 <header class="header">
-    <nav class="nav">
-       <a href="index.html">Back to House of Links</a>
-      <a href="internet-cafe.html" class="active">Internet Café Services</a>
-       <a href="branding.html">Branding & Promo</a>
-       <a href="graphic-design.html">Graphic Design</a>
-      <a href="website.html">Website Development & Company Registration</a>
-       <a href="it-and-technical-support.html">IT & Technical Support</a>
-    </nav>
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
+
+  <nav class="nav" id="navMenu">
+    <a href="index.html">Back to House of Links</a>
+    <a href="internet-cafe.html" class="active">Internet Café Services</a>
+    <a href="branding.html">Branding & Promo</a>
+    <a href="graphic-design.html">Graphic Design</a>
+    <a href="website.html">Website Development & Company Registration</a>
+    <a href="it-and-technical-support.html">IT & Technical Support</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -99,82 +152,71 @@
 </section>
 
 <section class="Pricelist">
-    <h2 class="section-title">LINKS PRINTING PRICELIST</h2>
+  <h2 class="section-title">LINKS PRINTING PRICELIST</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>SERVICE</th>
-      <th>DURATION/ QUANTITY</th>
-      <th>PRICE (ZAR)</th>
-    </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th>COPY  SCAN  PRINT  EMAIL</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Copy smart ID</td><td>Both sides</td><td>R 3.00</td></tr>
-    <tr><td>Copy B/W</td><td>Single side</td><td>R 2.00</td></tr>
-    <tr><td>Copy B/W</td><td>Double sided</td><td>R 4.00</td></tr>
-    <tr><td>Copy Colour</td><td>Single side</td><td>R 5.00</td></tr>
-    <tr><td>Copy Colour</td><td>Double sided</td><td>R 10.00</td></tr>
-    <tr><td>Print B/W</td><td>Single side</td><td>R 4.00</td></tr>
-    <tr><td>Print B/W</td><td>Double sided</td><td>R 8.00</td></tr>
-    <tr><td>Print Colour</td><td>Single side</td><td>R 8.00</td></tr>
-    <tr><td>Print Colour</td><td>Double sided</td><td>R 16.00</td></tr>
-    <tr><td>Scan</td><td>Per Page</td><td>R 2.00</td></tr>
-    <tr><td>Sending Email</td><td>---------</td><td>R 15.00</td></tr>
-    <tr><td>A5 Lamination</td><td>Per Page</td><td>R 7.00</td></tr>
-    <tr><td>A4 Lamination</td><td>Per Page</td><td>R 15.00</td></tr>
-    <tr><td>A3 Lamination</td><td>Per Page</td><td>R 30.00</td></tr>
-  </tbody>
+  <table>
+    <thead>
+      <tr>
+        <th>SERVICE</th>
+        <th>DURATION/ QUANTITY</th>
+        <th>PRICE (ZAR)</th>
+      </tr>
+    </thead>
 
-  <thead>
-    <tr><th>INTERNET ACCESS</th><th></th><th></th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Internet Access</td><td>Per Minute</td><td>R 0.50</td></tr>
-    <tr><td>Internet Access</td><td>30 Minutes</td><td>R 15.00</td></tr>
-    <tr><td>Internet Access</td><td>1 Hour</td><td>R 30.00</td></tr>
-  </tbody>
+    <tbody>
+      <tr><th colspan="3">COPY, SCAN, PRINT, EMAIL</th></tr>
+      <tr><td>Copy smart ID</td><td>Both sides</td><td>R 3.00</td></tr>
+      <tr><td>Copy B/W</td><td>Single side</td><td>R 2.00</td></tr>
+      <tr><td>Copy B/W</td><td>Double sided</td><td>R 4.00</td></tr>
+      <tr><td>Copy Colour</td><td>Single side</td><td>R 5.00</td></tr>
+      <tr><td>Copy Colour</td><td>Double sided</td><td>R 10.00</td></tr>
+      <tr><td>Print B/W</td><td>Single side</td><td>R 4.00</td></tr>
+      <tr><td>Print B/W</td><td>Double sided</td><td>R 8.00</td></tr>
+      <tr><td>Print Colour</td><td>Single side</td><td>R 8.00</td></tr>
+      <tr><td>Print Colour</td><td>Double sided</td><td>R 16.00</td></tr>
+      <tr><td>Scan</td><td>Per Page</td><td>R 2.00</td></tr>
+      <tr><td>Sending Email</td><td>---------</td><td>R 15.00</td></tr>
+      <tr><td>A5 Lamination</td><td>Per Page</td><td>R 7.00</td></tr>
+      <tr><td>A4 Lamination</td><td>Per Page</td><td>R 15.00</td></tr>
+      <tr><td>A3 Lamination</td><td>Per Page</td><td>R 30.00</td></tr>
 
-  <thead>
-    <tr><th>Typing</th><th></th><th></th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Typing</td><td>Per Page</td><td>R 15.00</td></tr>
-    <tr><td>Cover Letter</td><td>---------</td><td>R 50.00</td></tr>
-    <tr><td>Assignment Typing</td><td>---------</td><td>R 150.00</td></tr>
-  </tbody>
+      <tr><th colspan="3">INTERNET ACCESS</th></tr>
+      <tr><td>Internet Access</td><td>Per Minute</td><td>R 0.50</td></tr>
+      <tr><td>Internet Access</td><td>30 Minutes</td><td>R 15.00</td></tr>
+      <tr><td>Internet Access</td><td>1 Hour</td><td>R 30.00</td></tr>
 
-  <thead>
-    <tr><th>RESUME/CV</th><th></th><th></th></tr>
-  </thead>
-  <tbody>
-    <tr><td>CV Typing</td><td>---------</td><td>R 30.00</td></tr>
-    <tr><td>CV Revamp</td><td>---------</td><td>R 80.00</td></tr>
-  </tbody>
+      <tr><th colspan="3">Typing</th></tr>
+      <tr><td>Typing</td><td>Per Page</td><td>R 15.00</td></tr>
+      <tr><td>Cover Letter</td><td>---------</td><td>R 50.00</td></tr>
+      <tr><td>Assignment Typing</td><td>---------</td><td>R 150.00</td></tr>
 
-  <thead>
-    <tr><th>ONLINE APPLICATION</th><th></th><th></th></tr>
-  </thead>
-  <tbody>
-    <tr><td>University/NSFAS</td><td>---------</td><td>R 70.00</td></tr>
-    <tr><td>JOB APPLICATION</td><td>---------</td><td>R 70.00</td></tr>
-  </tbody>
-</table>
+      <tr><th colspan="3">RESUME/CV</th></tr>
+      <tr><td>CV Typing</td><td>---------</td><td>R 30.00</td></tr>
+      <tr><td>CV Revamp</td><td>---------</td><td>R 80.00</td></tr>
 
-<div style="text-align:center;">
-  <a href="links-printing-solutions.html" class="back-link">Back to Links Printing Solutions</a>
-</div>
+      <tr><th colspan="3">ONLINE APPLICATION</th></tr>
+      <tr><td>University/NSFAS</td><td>---------</td><td>R 70.00</td></tr>
+      <tr><td>JOB APPLICATION</td><td>---------</td><td>R 70.00</td></tr>
+    </tbody>
+  </table>
+
+  <div style="text-align:center;">
+    <a href="links-printing-solutions.html" class="back-link">Back to Links Printing Solutions</a>
+  </div>
+</section>
 
 <footer class="footer">
   &copy; 2025 Links Printing Solutions. Open daily 8AM - 7PM.
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
