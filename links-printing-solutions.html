@@ -84,31 +84,54 @@
       background-color: currentColor;
       border-radius: 2px;
       transition: 0.3s;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
+    } 
+    
+  .nav {
+    display: flex;
+    gap: 20px;
   }
-}
 
-      
-      .nav {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-      }
-      .nav.show {
-        display: flex;
-      }
+  .nav a {
+    text-decoration: none;
+    color:  #7aa2ff;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
     }
+
+    .nav {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background: #131726;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .nav.show {
+      display: flex;
+    }
+  }
   </style>
 </head>
 
@@ -238,3 +261,4 @@ hamburger.addEventListener('click', () => {
 
 </body>
 </html>
+
