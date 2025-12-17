@@ -6,30 +6,110 @@
   <title>Graphic Design Services | Links Printing Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
   <style>
     body {
-        font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
       background: #0f1117;
       color: #dbe1ff;
     }
-
-    
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #7aa2ff;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .nav a.active {
+      color: #ff8a00;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: #7aa2ff;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      .nav {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        background: #131726;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+        width: 200px;
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        box-shadow: 0 0 15px rgba(122,162,255,0.3);
+      }
+      .nav.show {
+        display: flex;
+      }
+    }
+    section.hero {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+      color: #7aa2ff;
+    }
+    section.hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    section.hero p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    section.hero .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff8a00;
+      color: #0d1020;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    section.hero .btn:hover {
+      background: #0f1117;
+      color: #7aa2ff;
+      border: 1px solid #7aa2ff;
+    }
     .intro {
-  max-width: 700px;
-  margin: 40px auto;
-  text-align: center;
-  background: #7aa2ff;
-  color: #0f1117;
-  padding: 25px 30px;
-  border-radius: 12px;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
+      max-width: 700px;
+      margin: 40px auto;
+      text-align: center;
+      background: #7aa2ff;
+      color: #0f1117;
+      padding: 25px 30px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
     section.service-section {
       display: flex;
       flex-wrap: wrap;
@@ -40,7 +120,6 @@
       padding: 0 20px;
       gap: 20px;
     }
-
     .service-block {
       flex: 1 1 45%;
       background: #1c2333;
@@ -49,29 +128,24 @@
       padding: 30px 20px;
       transition: 0.3s;
     }
-
     .service-block:hover {
       background: #252c44;
       transform: translateY(-5px);
     }
-
     .service-block h2 {
       color: #7aa2ff;
       font-size: 1.8rem;
       margin-bottom: 15px;
     }
-
     .service-block p {
       line-height: 1.6;
       color: #dbe1ff;
     }
-
     .service-icon {
       font-size: 2.5rem;
       margin-bottom: 15px;
       color: #7aa2ff;
     }
-
     .back-link {
       display: inline-block;
       justify-content: center;
@@ -85,44 +159,49 @@
       transition: 0.3s;
       text-align: center;
     }
-
-    .text-center {
-  text-align: center;
-}
-
-
     .back-link:hover {
       background: #0f1117;
       color: #7aa2ff;
       border: 1px solid #7aa2ff;
     }
-
+    .text-center {
+      text-align: center;
+    }
     @media (max-width: 700px) {
       .service-block {
         flex: 1 1 100%;
       }
+    }
+    .footer {
+      background: #0f1117;
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #1c2333;
+      color: #7aa2ff;
     }
   </style>
 </head>
 <body>
 
 <header class="header">
-    <nav class="nav">
-       <a href="index.html">Back to House of Links</a>
-      <a href="internet-cafe.html">Internet Café Services</a>
-       <a href="branding.html">Branding & Promo</a>
-       <a href="graphic-design.html" class="active">Graphic Design</a>
-      <a href="website.html">Website Development & Company Registration</a>
-       <a href="it-and-technical-support.html">IT & Technical Support</a>
-    </nav>
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
+  <nav class="nav" id="navMenu">
+    <a href="index.html">Back to House of Links</a>
+    <a href="internet-cafe.html">Internet Café Services</a>
+    <a href="branding.html">Branding & Promo</a>
+    <a href="graphic-design.html" class="active">Graphic Design</a>
+    <a href="website.html">Website Development & Company Registration</a>
+    <a href="it-and-technical-support.html">IT & Technical Support</a>
+  </nav>
 </header>
 
 <section class="hero">
   <h1>Graphic Design Services</h1>
-  <p>
-   Custom designs for personal and business projects with a modern touch.
-  </p>
+  <p>Custom designs for personal and business projects with a modern touch.</p>
   <a href="index.html" class="btn">Contact Us</a>
 </section>
 
@@ -132,23 +211,20 @@
     <h2>Logo Design</h2>
     <p>Professional, memorable logos crafted to represent your brand identity.</p>
   </div>
-
   <div class="service-block">
     <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
     <h2>Social Media Graphics</h2>
     <p>Clean, bold visuals for Facebook, Instagram, TikTok, YouTube and more.</p>
   </div>
-
   <div class="service-block">
     <div class="service-icon"><i class="fas fa-banner"></i></div>
     <h2>Posters & Digital Ads</h2>
     <p>High-impact posters and adverts designed to attract attention instantly.</p>
   </div>
-
   <div class="service-block">
     <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
     <h2>Custom Artwork</h2>
-    <p>Invitations, certificates, menus, Calenders, personal projects and more.</p>
+    <p>Invitations, certificates, menus, calendars, personal projects and more.</p>
   </div>
 </section>
 
@@ -156,9 +232,17 @@
   <a href="links-printing-solutions.html" class="back-link">Back to Links Printing Solutions</a>
 </div>
 
-<footer class="footer" style="background:#0f1117; text-align:center; padding:30px; border-top:1px solid #1c2333; color:#7aa2ff;">
+<footer class="footer">
   &copy; 2025 Links Printing Solutions. Open daily 8AM - 7PM.
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
