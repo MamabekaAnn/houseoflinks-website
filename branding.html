@@ -4,60 +4,86 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Graphic Design Services | Links Printing Solutions</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
   <style>
     body {
-        font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
       background: #0f1117;
       color: #dbe1ff;
     }
 
-    
-    .intro {
-  max-width: 700px;
-  margin: 40px auto;
-  text-align: center;
-  background: #7aa2ff;
-  color: #0f1117;
-  padding: 25px 30px;
-  border-radius: 12px;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
+    .header {
+      background: rgba(0, 0, 50, 0.6);
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba(0,255,255,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    .back-link {
-      display: inline-block;
-      justify-content: center;
-      margin: 40px auto;
-      padding: 12px 25px;
-      background: #ff8a00;
-      color: #0d1020;
+    .nav a {
+      font-family: 'Orbitron', sans-serif;
+      color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-      text-align: center;
+      margin-right: 15px;
     }
 
-    .text-center {
-  text-align: center;
-}
-
-
-    .back-link:hover {
-      background: #0f1117;
+    .nav a.active {
       color: #7aa2ff;
-      border: 1px solid #7aa2ff;
     }
 
-    @media (max-width: 700px) {
-      .service-block {
-        flex: 1 1 100%;
+    .lines-menu {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      width: 36px;
+      cursor: pointer;
+    }
+
+    .line {
+      height: 4px;
+      background: white;
+      border-radius: 3px;
+    }
+
+    .hidden-content {
+      display: none;
+      background: #0f1117;
+      padding: 15px;
+      border-bottom: 1px solid #1c2333;
+    }
+
+    .hidden-content a {
+      display: block;
+      padding: 12px 0;
+      color: #7aa2ff;
+      text-decoration: none;
+      border-bottom: 1px solid #1c2333;
+    }
+
+    .hidden-content.show {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .lines-menu {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .lines-menu,
+      .hidden-content {
+        display: none;
       }
     }
 
@@ -78,75 +104,84 @@
       border-left: 8px solid #7aa2ff;
       border-radius: 12px;
       padding: 30px 20px;
-      transition: 0.3s;
-    }
-
-    .service-block:hover {
-      background: #252c44;
-      transform: translateY(-5px);
     }
 
     .service-block h2 {
       color: #7aa2ff;
-      font-size: 1.8rem;
-      margin-bottom: 15px;
     }
 
-    .service-block p {
-      line-height: 1.6;
-      color: #dbe1ff;
+    @media (max-width: 700px) {
+      .service-block {
+        flex: 1 1 100%;
+      }
     }
 
-    .service-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: #7aa2ff;
+    .back-link {
+      display: inline-block;
+      margin: 40px auto;
+      padding: 12px 25px;
+      background: #ff8a00;
+      color: #0d1020;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
     }
   </style>
 </head>
+
 <body>
 
 <header class="header">
-    <nav class="nav">
-       <a href="index.html">Back to House of Links</a>
-      <a href="internet-cafe.html">Internet Café Services</a>
-       <a href="branding.html" class="active">Branding & Promo</a>
-       <a href="graphic-design.html">Graphic Design</a>
-      <a href="website.html">Website Development & Company Registration</a>
-       <a href="it-and-technical-support.html">IT & Technical Support</a>
-    </nav>
+  <nav class="nav">
+    <a href="index.html">Back to House of Links</a>
+    <a href="internet-cafe.html">Internet Café Services</a>
+    <a href="branding.html" class="active">Branding & Promo</a>
+    <a href="graphic-design.html">Graphic Design</a>
+    <a href="website.html">Website Development & Company Registration</a>
+    <a href="it-and-technical-support.html">IT & Technical Support</a>
+  </nav>
+
+  <div class="lines-menu">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
   </div>
 </header>
 
+<div id="mobileNav" class="hidden-content">
+  <a href="index.html">Back to House of Links</a>
+  <a href="internet-cafe.html">Internet Café Services</a>
+  <a href="branding.html">Branding & Promo</a>
+  <a href="graphic-design.html">Graphic Design</a>
+  <a href="website.html">Website Development & Company Registration</a>
+  <a href="it-and-technical-support.html">IT & Technical Support</a>
+</div>
+
 <section class="hero">
   <h1>Branding & Promotional Materials</h1>
-    <p>Business cards, flyers, banners, and brochures designed to grow your brand.</p>
-    <a href="index.html#contact" class="btn">Contact Us</a>
+  <p>Business cards, flyers, banners, and brochures designed to grow your brand.</p>
+  <a href="index.html#contact" class="btn">Contact Us</a>
 </section>
 
 <section class="service-section">
   <div class="service-block">
-    <div class="service-icon"><i class="fas fa-id-card"></i></div>
     <h2>Business Cards</h2>
-    <p>Professional, high-quality business cards designed to make a lasting impression and reflect your brand identity.</p>
+    <p>Professional, high-quality business cards designed to make a lasting impression.</p>
   </div>
 
   <div class="service-block">
-    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
     <h2>Flyers</h2>
-    <p>Creative flyers that grab attention and communicate your message effectively for events, promotions, or sales.</p>
+    <p>Creative flyers that grab attention and communicate your message effectively.</p>
   </div>
 
   <div class="service-block">
-    <div class="service-icon"><i class="fas fa-banner"></i></div>
     <h2>Banner Design (Digital Only)</h2>
-    <p>We design custom banner artwork ready for printing, perfect for events, promotions, or branding. File provided digitally.</p>
+    <p>We design custom banner artwork ready for printing, provided digitally.</p>
   </div>
 
   <div class="service-block">
-    <div class="service-icon"><i class="fas fa-book-open"></i></div>
     <h2>Brochures</h2>
-    <p>Informative and beautifully designed brochures that showcase your products or services in a professional format.</p>
+    <p>Informative and beautifully designed brochures.</p>
   </div>
 </section>
 
@@ -157,6 +192,12 @@
 <footer class="footer" style="background:#0f1117; text-align:center; padding:30px; border-top:1px solid #1c2333; color:#7aa2ff;">
   &copy; 2025 Links Printing Solutions. Open daily 8AM - 7PM.
 </footer>
+
+<script>
+  document.querySelector('.lines-menu').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
