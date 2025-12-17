@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Car Wash Services | Links Printing Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #0f1117;
+  color: #dbe1ff;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 10;
+}
+.nav {
+  display: flex;
+  gap: 150px;
+}
+.nav a {
+  text-decoration: none;
+  color: #7aa2ff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.nav a.active {
+  color: #ff8a00;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger div {
+  width: 30px;
+  height: 4px;
+  background-color: #7aa2ff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: url('car.jpg') center/cover no-repeat;
+  position: relative;
+  border-radius: 12px;
+  color: #fff;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15,17,23,0.6);
+  border-radius: 12px;
+}
+.hero-text {
+  flex: 1 1 400px;
+  max-width: 600px;
+  margin: 20px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ff8a00;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.hero-text .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff8a00;
+  color: #0d1020;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.hero-text .btn:hover {
+  background: #0f1117;
+  color: #7aa2ff;
+  border: 1px solid #7aa2ff;
+}
+
+.info-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+.info-text {
+  flex: 1 1 500px;
+  color: #dbe1ff;
+}
+.info-text h2 {
+  color: #ff8a00;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+.info-text p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.info-image {
+  flex: 1 1 400px;
+}
+.info-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(122,162,255,0.3);
+}
+.reverse-section .info-container {
+  flex-direction: row-reverse;
+}
+
+.services-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.service-card {
+  flex: 1 1 300px;
+  background: #1c2333;
+  border-left: 6px solid #ff8a00;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(122,162,255,0.2);
+}
+.service-card:hover {
+  background: #252c44;
+  transform: translateY(-5px);
+}
+.service-card i {
+  font-size: 3rem;
+  color: #7aa2ff;
+  margin-bottom: 15px;
+}
+.service-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #ff8a00;
+}
+.service-card p {
+  line-height: 1.6;
+}
+
+.button-container {
+  text-align: center;
+  margin: 50px 0;
+}
+.back-link {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff8a00;
+  color: #0d1020;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+  text-align: center;
+}
+.back-link:hover {
+  background: #0f1117;
+  color: #7aa2ff;
+  border: 1px solid #7aa2ff;
+}
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: #131726;
+  color: #7aa2ff;
+}
+
+@media(max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+  .info-container,
+  .reverse-section .info-container {
+    flex-direction: column;
+  }
+  .hero-text { text-align: center; }
+  .hamburger { display: flex; }
+  .nav { display: none; flex-direction: column; gap: 12px; background: #131726; padding: 15px; border-radius: 8px; margin-top: 15px; width: 200px; position: absolute; right: 20px; top: 70px; box-shadow: 0 0 15px rgba(122,162,255,0.3); }
+  .nav.show { display: flex; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav class="nav" id="navMenu">
+    <a href="index.html">Back to House of Links</a>
+    <a href="car-wash.html" class="active">Car Wash</a>
+    <a href="">Sneaker Cleaning</a>
+    <a href="">Commercial Cleaning</a>
+    <a href="">Domestic Cleaning</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Premium Car Wash Services</h1>
+    <p>Eco-friendly, professional cleaning for your vehicle. Keep your car spotless inside and out with our modern car wash solutions.</p>
+    <a href="index.html#contact" class="btn">Book a Wash</a>
+  </div>
+</section>
+
+<section class="info-section">
+  <div class="info-container">
+    <div class="info-image">
+      <img src="car-wash.jpg" alt="Car Wash Quality" />
+    </div>
+    <div class="info-text">
+      <h2>Why Choose Our Car Wash?</h2>
+      <p>Our car wash services use eco-friendly products and modern equipment to ensure your vehicle looks its best. We take care of every detail, from interior cleaning to exterior polishing, providing a service that is fast, reliable, and professional. Experience the difference with our premium car wash packages.</p>
+      <p>Whether it’s a quick wash or a full detailing, our team is trained to handle every type of vehicle with care. We focus on quality and customer satisfaction, ensuring your car shines and stays protected. Trust us for a spotless, shiny vehicle every time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="info-section">
+  <div class="info-container">
+    <div class="info-text">
+      <h2>Our Premium Detailing Services</h2>
+      <p>From interior deep cleaning to exterior polishing, our premium detailing packages ensure your car looks flawless. We use high-quality products and advanced techniques to protect your vehicle’s paint and interior surfaces.</p>
+      <p>Our trained team pays attention to every corner of your car, delivering results that leave it shining inside and out. Experience the ultimate care for your vehicle with services tailored to meet your needs.</p>
+    </div>
+    <div class="info-image">
+      <img src="interior.jpg" alt="Car Detailing Service" />
+    </div>
+  </div>
+</section>
+
+
+<section class="services-section">
+  <div class="service-card">
+    <i class="fas fa-car-side"></i>
+    <h3>Exterior Wash</h3>
+    <p>Hand wash, wax, and polish for a perfect shine.</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-tint"></i>
+    <h3>Interior Cleaning</h3>
+    <p>Vacuum, upholstery clean, and dashboard care for a fresh interior.</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-water"></i>
+    <h3>Premium Wax & Polish</h3>
+    <p>Protects your car's paint while enhancing gloss and finish.</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-shower"></i>
+    <h3>Full Detailing</h3>
+    <p>Complete interior and exterior detailing for showroom results.</p>
+  </div>
+</section>
+
+<div class="button-container">
+  <a href="links-cleaning.html" class="back-link">Back to Links Cleaning Services</a>
+</div>
+
+<footer class="footer">
+  &copy; 2025 Links Printing Solutions. Open daily 8AM - 7PM.
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>
