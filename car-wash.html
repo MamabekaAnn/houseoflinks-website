@@ -17,15 +17,16 @@ body {
 
 .header {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: space-between;
   padding: 15px 20px;
   position: relative;
   z-index: 10;
 }
+  
 .nav {
   display: flex;
-  gap: 150px;
+  gap: 70px;
 }
 .nav a {
   text-decoration: none;
@@ -36,6 +37,16 @@ body {
 .nav a.active {
   color: #ff8a00;
 }
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #7aa2ff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -220,11 +231,14 @@ body {
 <body>
 
 <header class="header">
+  <div class="logo">Links Car Wash</div>
+
   <div class="hamburger" id="hamburger">
     <div></div>
     <div></div>
     <div></div>
   </div>
+
   <nav class="nav" id="navMenu">
     <a href="index.html">Back to House of Links</a>
     <a href="">Sneaker Cleaning</a>
@@ -312,4 +326,5 @@ hamburger.addEventListener('click', () => {
 
 </body>
 </html>
+
 
