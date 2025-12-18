@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sneaker Cleaning Services</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
@@ -15,6 +16,7 @@ body {
   color: #dbe1ff;
 }
 
+/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
@@ -35,7 +37,7 @@ body {
 
 .nav {
   display: flex;
-  gap: 80px;
+  gap: 60px;
 }
 
 .nav a {
@@ -49,6 +51,7 @@ body {
   color: #ff8a00;
 }
 
+/* HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -63,6 +66,7 @@ body {
   border-radius: 2px;
 }
 
+/* HERO */
 .hero {
   background: url('sneaker-hero.png') center/cover no-repeat;
   position: relative;
@@ -75,7 +79,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(15, 17, 23, .7);
+  background: rgba(15,17,23,.7);
   border-radius: 14px;
 }
 
@@ -90,7 +94,6 @@ body {
 .hero-content h1 {
   font-size: 3rem;
   color: #ff8a00;
-  margin-bottom: 15px;
 }
 
 .hero-content p {
@@ -108,12 +111,7 @@ body {
   font-weight: bold;
 }
 
-.hero-content a:hover {
-  background: #0f1117;
-  color: #7aa2ff;
-  border: 1px solid #7aa2ff;
-}
-
+/* PRICING */
 .pricing {
   max-width: 1200px;
   margin: 80px auto;
@@ -130,24 +128,15 @@ body {
   padding: 35px 25px;
   text-align: center;
   flex: 1 1 300px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
 }
 
 .price-card h3 {
   color: #ff8a00;
-  font-size: 1.6rem;
-  margin-bottom: 10px;
 }
 
 .price {
   font-size: 2.6rem;
   font-weight: 700;
-  margin: 15px 0;
-}
-
-.price-card p {
-  line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 .price-card a {
@@ -162,6 +151,7 @@ body {
   font-weight: bold;
 }
 
+/* RESULTS */
 .section-title {
   text-align: center;
   color: #ff8a00;
@@ -182,7 +172,7 @@ body {
   background: #131726;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, .5);
+  position: relative;
 }
 
 .result-card span {
@@ -191,12 +181,38 @@ body {
   color: #0f1117;
   padding: 6px 14px;
   font-weight: bold;
-  border-bottom-right-radius: 8px;
 }
 
 .result-card img {
   width: 100%;
   display: block;
+}
+
+/* SNEAKER LINKS */
+.sneaker-links {
+  display: flex;
+  gap: 20px;
+  margin: 40px 20px;
+}
+
+.column {
+  flex: 1;
+  text-align: center;
+}
+
+.column img {
+  width: 70%;
+  border-radius: 10px;
+}
+
+.column h2 {
+  color: #ff8a00;
+}
+
+/* BUTTON */
+.button-container {
+  text-align: center;
+  margin: 40px 0;
 }
 
 .back-link {
@@ -207,21 +223,9 @@ body {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  transition: 0.3s;
-  text-align: center;
-}
-.back-link:hover {
-  background: #0f1117;
-  color: #7aa2ff;
-  border: 1px solid #7aa2ff;
 }
 
-.button-container {
-  text-align: center;
-  margin: 40px 0;
-}
-
-
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 30px;
@@ -229,10 +233,23 @@ body {
   color: #7aa2ff;
 }
 
-
+/* MOBILE */
 @media (max-width: 768px) {
   .nav {
     display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #0f1117;
+    padding: 20px;
+    gap: 20px;
+    border-top: 1px solid #1c2333;
+  }
+
+  .nav.show {
+    display: flex;
   }
 
   .hamburger {
@@ -242,103 +259,97 @@ body {
   .hero-content h1 {
     font-size: 2.3rem;
   }
-}
 
-.sneaker-links {
-  display: flex;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.column img {
-  width: 70%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.column h2 {
-  margin-bottom: 10px;
-  text-align: center;
-  color: #ff8a00;
-}
-
-.column p {
-  text-align: center;
-  line-height: 1.5;
+  .sneaker-links {
+    flex-direction: column;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header class="header">
-<div class="logo">Links Sneakers Cleaning</div>
-<div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
-<nav class="nav" id="navMenu">
-<a href="index.html">Back to House of Links</a>
-<a href="sneaker-cleaning.html" class="active">Sneakers Cleaning</a>
-<a href="car-wash.html">Car Wash</a>
-<a href="">Commercial Cleaning</a>
-</nav>
+  <div class="logo">Links Sneakers Cleaning</div>
+
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav class="nav" id="navMenu">
+    <a href="index.html">Back to House of Links</a>
+    <a href="sneaker-cleaning.html" class="active">Sneakers Cleaning</a>
+    <a href="car-wash.html">Car Wash</a>
+    <a href="#">Commercial Cleaning</a>
+  </nav>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>Sneaker Cleaning Services</h1>
-<p>Bring your kicks back to life with our professional sneaker cleaning and restoration</p>
-<a href="https://wa.me/27723901995">Book Now on WhatsApp</a>
-</div>
+  <div class="hero-content">
+    <h1>Sneaker Cleaning Services</h1>
+    <p>Bring your kicks back to life with our professional sneaker cleaning and restoration</p>
+    <a href="https://wa.me/27723901995">Book Now on WhatsApp</a>
+  </div>
 </section>
 
 <section class="pricing">
-<div class="price-card"><h3>Basic Clean</h3><div class="price">R60</div><p>Standard Cleaning<br>Surface Dirt Removal</p><a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Book Now</a></div>
-<div class="price-card"><h3>Premium Clean</h3><div class="price">R100</div><p>Deep Cleaning<br>Stain Treatment & Deodorizing</p><a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Book Now</a></div>
-<div class="price-card"><h3>Restore Package</h3><div class="price">R150</div><p>Full Restoration<br>Sole Deoxidation & Repair</p><a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Book Now</a></div>
+  <div class="price-card">
+    <h3>Basic Clean</h3>
+    <div class="price">R60</div>
+    <p>Standard Cleaning<br>Surface Dirt Removal</p>
+    <a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Book Now</a>
+  </div>
+
+  <div class="price-card">
+    <h3>Premium Clean</h3>
+    <div class="price">R100</div>
+    <p>Deep Cleaning<br>Stain Treatment & Deodorizing</p>
+    <a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Book Now</a>
+  </div>
+
+  <div class="price-card">
+    <h3>Restore Package</h3>
+    <div class="price">R150</div>
+    <p>Full Restoration<br>Sole Deoxidation & Repair</p>
+    <a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Book Now</a>
+  </div>
 </section>
 
 <h2 class="section-title">Before & After Results</h2>
 
 <section class="results">
-<div class="result-card"><span>BEFORE</span><img src="before1.png"></div>
-<div class="result-card"><span>AFTER</span><img src="after1.png"></div>
-<div class="result-card"><span>BEFORE</span><img src="before2.jpg"></div>
-<div class="result-card"><span>AFTER</span><img src="after2.jpg"></div>
+  <div class="result-card"><span>BEFORE</span><img src="before1.png"></div>
+  <div class="result-card"><span>AFTER</span><img src="after1.png"></div>
+  <div class="result-card"><span>BEFORE</span><img src="before2.jpg"></div>
+  <div class="result-card"><span>AFTER</span><img src="after2.jpg"></div>
 </section>
 
 <section class="sneaker-links">
   <div class="column">
     <h2>SNEAKER LINKS FOR SISTERS</h2>
-    <p>Lace up for Equity </p>
+    <p>Lace up for Equity</p>
     <p><b>An initiative</b> that combines sneaker culture with social impact.</p>
-    <p>We aim to raise awareness and support for underpriviledged girls in schools and in our commmunity by collecting and distributing sanitary pads.</p>
-     <p>For every pair of sneakers washed, we provide a package of sanitary pads to those in need.</p>
-     <p><b>Join us</b> in lacing up for equity and empowering girls to stay in school and thrrive.</p>
+    <p>For every pair of sneakers washed, we donate sanitary pads to girls in need.</p>
   </div>
   <div class="column">
-    <img src="pads.jpg" alt="Sneaker 1">
+    <img src="pads.jpg" alt="Sanitary Pads">
   </div>
 </section>
-
 
 <div class="button-container">
   <a href="links-cleaning.html" class="back-link">Back to Links Cleaning Services</a>
 </div>
 
- <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Links Cleaning Services. Open daily 8AM - 7PM.</p>
-    </div>
- </footer>
+<footer class="footer">
+  <p>&copy; 2025 Links Cleaning Services. Open daily 8AM - 7PM.</p>
+</footer>
 
 <script>
-const h=document.getElementById('hamburger'),n=document.getElementById('navMenu');h.addEventListener('click',()=>n.classList.toggle('show'));
+const h = document.getElementById('hamburger');
+const n = document.getElementById('navMenu');
+h.addEventListener('click', () => n.classList.toggle('show'));
 </script>
 
 </body>
