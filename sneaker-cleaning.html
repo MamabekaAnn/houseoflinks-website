@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sneaker Cleaning Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f1117;
+  color: #dbe1ff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #0f1117;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: #7aa2ff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 80px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #7aa2ff;
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+.nav a.active {
+  color: #ff8a00;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 4px;
+  background: #7aa2ff;
+  border-radius: 2px;
+}
+
+.hero {
+  background: url('sneaker-hero.png') center/cover no-repeat;
+  position: relative;
+  padding: 120px 20px;
+  border-radius: 14px;
+  margin: 20px;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 17, 23, .7);
+  border-radius: 14px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #ff8a00;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.hero-content a {
+  display: inline-block;
+  padding: 14px 35px;
+  background: #ff8a00;
+  color: #0f1117;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.hero-content a:hover {
+  background: #0f1117;
+  color: #7aa2ff;
+  border: 1px solid #7aa2ff;
+}
+
+.pricing {
+  max-width: 1200px;
+  margin: 80px auto;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.price-card {
+  background: #1c2333;
+  border-radius: 14px;
+  padding: 35px 25px;
+  text-align: center;
+  flex: 1 1 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+
+.price-card h3 {
+  color: #ff8a00;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.price-card p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.price-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 30px;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.section-title {
+  text-align: center;
+  color: #ff8a00;
+  font-size: 2rem;
+  margin: 80px 0 30px;
+}
+
+.results {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.result-card {
+  background: #131726;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .5);
+}
+
+.result-card span {
+  position: absolute;
+  background: #ff8a00;
+  color: #0f1117;
+  padding: 6px 14px;
+  font-weight: bold;
+  border-bottom-right-radius: 8px;
+}
+
+.result-card img {
+  width: 100%;
+  display: block;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff8a00;
+  color: #0d1020;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+  text-align: center;
+}
+.back-link:hover {
+  background: #0f1117;
+  color: #7aa2ff;
+  border: 1px solid #7aa2ff;
+}
+
+.button-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: #131726;
+  color: #7aa2ff;
+}
+
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+}
+
+.sneaker-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.column img {
+  width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.column h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ff8a00;
+}
+
+.column p {
+  text-align: center;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="logo">Links Sneakers Cleaning</div>
+<div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
+<nav class="nav" id="navMenu">
+<a href="index.html">Back to House of Links</a>
+<a href="sneaker-cleaning.html" class="active">Sneakers Cleaning</a>
+<a href="car-wash.html">Car Wash</a>
+<a href="">Commercial Cleaning</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Sneaker Cleaning Services</h1>
+<p>Bring your kicks back to life with our professional sneaker cleaning and restoration</p>
+<a href="https://wa.me/27723901995">Book Now on WhatsApp</a>
+</div>
+</section>
+
+<section class="pricing">
+<div class="price-card"><h3>Basic Clean</h3><div class="price">R60</div><p>Standard Cleaning<br>Surface Dirt Removal</p><a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Book Now</a></div>
+<div class="price-card"><h3>Premium Clean</h3><div class="price">R100</div><p>Deep Cleaning<br>Stain Treatment & Deodorizing</p><a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Book Now</a></div>
+<div class="price-card"><h3>Restore Package</h3><div class="price">R150</div><p>Full Restoration<br>Sole Deoxidation & Repair</p><a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Book Now</a></div>
+</section>
+
+<h2 class="section-title">Before & After Results</h2>
+
+<section class="results">
+<div class="result-card"><span>BEFORE</span><img src="before1.png"></div>
+<div class="result-card"><span>AFTER</span><img src="after1.png"></div>
+<div class="result-card"><span>BEFORE</span><img src="before2.jpg"></div>
+<div class="result-card"><span>AFTER</span><img src="after2.jpg"></div>
+</section>
+
+<section class="sneaker-links">
+  <div class="column">
+    <h2>SNEAKER LINKS FOR SISTERS</h2>
+    <p>Lace up for Equity </p>
+    <p><b>An initiative</b> that combines sneaker culture with social impact.</p>
+    <p>We aim to raise awareness and support for underpriviledged girls in schools and in our commmunity by collecting and distributing sanitary pads.</p>
+     <p>For every pair of sneakers washed, we provide a package of sanitary pads to those in need.</p>
+     <p><b>Join us</b> in lacing up for equity and empowering girls to stay in school and thrrive.</p>
+  </div>
+  <div class="column">
+    <img src="pads.jpg" alt="Sneaker 1">
+  </div>
+</section>
+
+
+<div class="button-container">
+  <a href="links-cleaning.html" class="back-link">Back to Links Cleaning Services</a>
+</div>
+
+ <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Links Cleaning Services. Open daily 8AM - 7PM.</p>
+    </div>
+ </footer>
+
+<script>
+const h=document.getElementById('hamburger'),n=document.getElementById('navMenu');h.addEventListener('click',()=>n.classList.toggle('show'));
+</script>
+
+</body>
+</html>
