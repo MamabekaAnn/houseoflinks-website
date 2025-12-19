@@ -52,8 +52,9 @@ body {
 .hamburger div {
   width: 30px;
   height: 4px;
-  background: #7aa2ff;
+  background-color: #7aa2ff;
   border-radius: 2px;
+  transition: 0.3s;
 }
 
 .hero {
@@ -206,31 +207,26 @@ body {
   color: #7aa2ff;
 }
 
-@media (max-width: 768px) {
+/* UPDATED HAMBURGER CSS FOR MOBILE */
+@media(max-width: 768px) {
+  .hamburger { display: flex; }
   .nav {
     display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
     flex-direction: column;
-    background: #0f1117;
-    padding: 20px;
-    gap: 20px;
-    border-top: 1px solid #1c2333;
+    gap: 12px;
+    background: #131726;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    width: 200px;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    box-shadow: 0 0 15px rgba(122,162,255,0.3);
   }
-
-  .nav.show {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .hero-content h1 {
-    font-size: 2.3rem;
-  }
+  .nav.show { display: flex; }
+  
+  .hero-content h1 { font-size: 2.3rem; }
 }
 </style>
 </head>
@@ -238,7 +234,6 @@ body {
 <body>
 
 <header class="header">
-
   <div class="hamburger" id="hamburger">
     <div></div>
     <div></div>
@@ -327,9 +322,11 @@ body {
 </footer>
 
 <script>
-const h = document.getElementById('hamburger');
-const n = document.getElementById('navMenu');
-h.addEventListener('click', () => n.classList.toggle('show'));
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
 </script>
 
 </body>
