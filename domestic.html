@@ -52,8 +52,9 @@ body {
 .hamburger div {
   width: 30px;
   height: 4px;
-  background: #7aa2ff;
+  background-color: #7aa2ff;
   border-radius: 2px;
+  transition: 0.3s;
 }
 
 .hero {
@@ -251,30 +252,24 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hamburger { display: flex; }
   .nav {
     display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
     flex-direction: column;
-    background: #0f1117;
-    padding: 20px;
-    gap: 20px;
-    border-top: 1px solid #1c2333;
+    gap: 12px;
+    background: #131726;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    width: 200px;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    box-shadow: 0 0 15px rgba(122,162,255,0.3);
   }
-
-  .nav.show {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .hero-content h1 {
-    font-size: 2.3rem;
-  }
+  .nav.show { display: flex; }
+  
+  .hero-content h1 { font-size: 2.3rem; }
 }
 </style>
 </head>
@@ -309,33 +304,29 @@ body {
 <section class="intro">
   <h2>A Cleaning Service You Can Trust</h2>
   <p>
-  At Links Domestic Cleaning, we offer reliable and professional domestic cleaning services
-  designed to keep your home fresh, hygienic and comfortable at all times.
-  Our services go beyond basic house cleaning and are tailored to meet the everyday
-  and occasional needs of modern households.
-</p>
-
-<p>
-  We provide thorough house cleaning that covers bedrooms, living areas, kitchens,
-  bathrooms and common spaces, ensuring every part of your home is cleaned with care
-  and attention to detail. Our team also specialises in carpet washing and carpet
-  cleaning, removing deep-seated dirt, stains and odours to restore the cleanliness
-  and appearance of your carpets.
-</p>
-
-<p>
-  In addition, we offer professional bed and couch cleaning services, ideal for
-  maintaining hygiene and extending the life of your furniture. This service is
-  especially popular after events, gatherings or special occasions, where furniture
-  may require deep cleaning to remove spills, dust and heavy use marks.
-</p>
-
-<p>
-  Whether you need routine domestic cleaning, a once-off deep clean, or post-event
-  cleaning services, we are committed to delivering dependable,
-  high-quality results that leave your home clean, fresh and welcoming.
-</p>
-
+    We offer reliable and professional domestic cleaning services
+    designed to keep your home fresh, hygienic and comfortable at all times.
+    Our services go beyond basic house cleaning and are tailored to meet the everyday
+    and occasional needs of modern households.
+  </p>
+  <p>
+    We provide thorough house cleaning that covers bedrooms, living areas, kitchens,
+    bathrooms and common spaces, ensuring every part of your home is cleaned with care
+    and attention to detail. Our team also specialises in carpet washing and carpet
+    cleaning, removing deep-seated dirt, stains and odours to restore the cleanliness
+    and appearance of your carpets.
+  </p>
+  <p>
+    In addition, we offer professional bed and couch cleaning services, ideal for
+    maintaining hygiene and extending the life of your furniture. This service is
+    especially popular after events, gatherings or special occasions, where furniture
+    may require deep cleaning to remove spills, dust and heavy use marks.
+  </p>
+  <p>
+    Whether you need routine domestic cleaning, a once-off deep clean, or post-event
+    cleaning services, we are committed to delivering dependable,
+    high-quality results that leave your home clean, fresh and welcoming.
+  </p>
 </section>
 
 <section class="text-services">
@@ -351,7 +342,6 @@ body {
 </section>
 
 <h2 class="section-title">Our Services</h2>
-
 
 <section class="pricing">
   <div class="price-card">
@@ -430,7 +420,6 @@ body {
     <h3>Carpet/floor Cleaning</h3>
     <div class="price">R75.00</div>
     <p>Per Square Metre</p>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
     <a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Get Your Quote Now</a>
   </div>
 
@@ -438,7 +427,6 @@ body {
     <h3>Windows/Glass Cleaning</h3>
     <div class="price">R75.00</div>
     <p>Per Square Metre</p>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
     <a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Get Your Quote Now</a>
   </div>
 
@@ -446,9 +434,9 @@ body {
     <h3>Bed Cleaning</h3>
     <div class="price">R300.00</div>
     <p>Queen/King bed</p>
-     <div class="price">R230.00</div>
+    <div class="price">R230.00</div>
     <p>Double bed</p>
-     <div class="price">R180.00</div>
+    <div class="price">R180.00</div>
     <p>Single & 3 Quater bed</p>
     <a href="https://wa.me/27723901995"><i class="fab fa-whatsapp"></i>Get Your Quote Now</a>
   </div>
@@ -463,9 +451,11 @@ body {
 </footer>
 
 <script>
-const h = document.getElementById('hamburger');
-const n = document.getElementById('navMenu');
-h.addEventListener('click', () => n.classList.toggle('show'));
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
 </script>
 
 </body>
