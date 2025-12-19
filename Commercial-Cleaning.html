@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Commercial Cleaning Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f1117;
+  color: #dbe1ff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #0f1117;
+  position: relative;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  gap: 160px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #7aa2ff;
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+.nav a.active {
+  color: #ff8a00;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 4px;
+  background: #7aa2ff;
+  border-radius: 2px;
+}
+
+.hero {
+  background: url('Commercial.jpg') center/cover no-repeat;
+  position: relative;
+  padding: 120px 20px;
+  border-radius: 14px;
+  margin: 20px;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15,17,23,.75);
+  border-radius: 14px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #ff8a00;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.hero-content a {
+  display: inline-block;
+  padding: 14px 35px;
+  background: #ff8a00;
+  color: #0f1117;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.hero-content a:hover {
+  background: #0f1117;
+  color: #7aa2ff;
+  border: 1px solid #7aa2ff;
+}
+
+.intro {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.intro h2 {
+  color: #ff8a00;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.text-services {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.text-box {
+  background: #131726;
+  border-radius: 14px;
+  padding: 35px;
+  text-align: center ;
+}
+
+.text-box h3 {
+  color: #ff8a00;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  text-align: center;
+  color: #ff8a00;
+  font-size: 2rem;
+  margin: 80px 0 30px;
+}
+
+.results {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.result-card {
+  background: #131726;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+}
+
+.result-card i {
+  font-size: 2.5rem;
+  color: #ff8a00;
+  margin-bottom: 15px;
+}
+
+.result-card h4 {
+  margin-bottom: 10px;
+  color: #7aa2ff;
+}
+
+.button-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff8a00;
+  color: #0d1020;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-link:hover {
+  background: #0f1117;
+  color: #7aa2ff;
+  border: 1px solid #7aa2ff;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: #131726;
+  color: #7aa2ff;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #0f1117;
+    padding: 20px;
+    gap: 20px;
+    border-top: 1px solid #1c2333;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav class="nav" id="navMenu">
+    <a href="index.html">Back to House of Links</a>
+    <a href="sneaker-cleaning.html">Sneaker Cleaning</a>
+    <a href="car-wash.html">Car Wash</a>
+    <a href="Commercial-Cleaning.html" class="active">Commercial Cleaning</a>
+    <a href="domestic-cleaning.html">Domestic Cleaning</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Commercial Cleaning Services</h1>
+    <p>Professional cleaning solutions for offices, shops, warehouses and more. Keeping your workspace spotless and hygienic.</p>
+    <a href="https://wa.me/27723901995">Book Now on WhatsApp</a>
+  </div>
+</section>
+
+<section class="intro">
+  <h2>Reliable Commercial Cleaning</h2>
+  <p>
+    At Links Commercial Cleaning, we provide expert cleaning services tailored for businesses and commercial properties.
+    Our trained staff ensures your workplace is clean, safe, and welcoming for employees and clients.
+  </p>
+  <p>
+    From offices and shops to warehouses and industrial spaces, we handle all types of commercial cleaning with attention to detail and professional standards.
+  </p>
+</section>
+
+<section class="text-services">
+  <div class="text-box">
+    <h3>Office Cleaning</h3>
+    <p>Desks, floors, kitchens, bathrooms and common areas kept spotless daily or weekly.</p>
+  </div>
+
+  <div class="text-box">
+    <h3>Industrial & Warehouse Cleaning</h3>
+    <p>Specialised cleaning for large spaces, machinery areas, and storage facilities.</p>
+  </div>
+
+  <div class="text-box">
+    <h3>Retail & Shop Cleaning</h3>
+    <p>Professional cleaning ensuring a welcoming environment for customers.</p>
+  </div>
+</section>
+
+<h2 class="section-title">Why Choose Us?</h2>
+
+<section class="results">
+  <div class="result-card">
+    <i class="fas fa-users"></i>
+    <h4>Professional Team</h4>
+    <p>Trained and experienced cleaning staff for all commercial needs.</p>
+  </div>
+
+  <div class="result-card">
+    <i class="fas fa-shield-alt"></i>
+    <h4>Safe & Reliable</h4>
+    <p>We follow strict safety protocols and reliable scheduling.</p>
+  </div>
+
+  <div class="result-card">
+    <i class="fas fa-broom"></i>
+    <h4>Thorough Cleaning</h4>
+    <p>Attention to detail for offices, shops, warehouses, and more.</p>
+  </div>
+
+  <div class="result-card">
+    <i class="fas fa-hand-holding-water"></i>
+    <h4>Eco-Friendly Products</h4>
+    <p>We use safe and environmentally friendly cleaning solutions.</p>
+  </div>
+</section>
+
+<div class="button-container">
+  <a href="links-cleaning.html" class="back-link">Back to Links Cleaning Services</a>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2025 Links Cleaning Services. Open daily 8AM – 7PM.</p>
+</footer>
+
+<script>
+const h = document.getElementById('hamburger');
+const n = document.getElementById('navMenu');
+h.addEventListener('click', () => n.classList.toggle('show'));
+</script>
+
+</body>
+</html>
