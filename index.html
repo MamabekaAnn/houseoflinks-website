@@ -233,17 +233,25 @@
         </div>
       </div>
 
-      <div class="contact-form">
+    <div class="contact-form">
         <h2>Contact Us</h2>
-        <form id="contactForm">
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-          <input type="text" id="subject" name="title" placeholder="Subject" required>
-          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <form action="https://formsubmit.co/info@houseoflinks.co.za" method="POST">
+
+          <input type="hidden" name="_subject" value="New Contact Message - House of Links">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://houseoflinks.co.za/thank-you.html">
+
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="title" placeholder="Subject" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
           <button type="submit">Send Message</button>
         </form>
       </div>
     </div>
+
 
     <div class="map-wrapper" style="width: 100%; margin-top: 40px;">
       <iframe
@@ -273,3 +281,4 @@
 
 </body>
 </html>
+
