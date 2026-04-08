@@ -52,7 +52,7 @@ header .container {
 
 .nav a:hover,
 .nav a.active {
-  color: #4fc3f7;
+  color: #ff8a00;
   text-shadow: 0 0 10px #4fc3f7;
 }
 
