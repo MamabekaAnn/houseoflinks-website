@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphic Design Services | Links Printing Solutions</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #0f1117;
+      color: #dbe1ff;
+    }
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #7aa2ff;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .nav a.active {
+      color: #ff8a00;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: #7aa2ff;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      .nav {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        background: #131726;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+        width: 200px;
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        box-shadow: 0 0 15px rgba(122,162,255,0.3);
+      }
+      .nav.show {
+        display: flex;
+      }
+    }
+    section.hero {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+      color: #7aa2ff;
+    }
+    section.hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    section.hero p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    section.hero .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff8a00;
+      color: #0d1020;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    section.hero .btn:hover {
+      background: #0f1117;
+      color: #7aa2ff;
+      border: 1px solid #7aa2ff;
+    }
+    section.service-section {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 20px;
+    }
+    .service-block {
+      flex: 1 1 45%;
+      background: #1c2333;
+      border-left: 8px solid #7aa2ff;
+      border-radius: 12px;
+      padding: 30px 20px;
+    }
+    @media (max-width: 700px) {
+      .service-block {
+        flex: 1 1 100%;
+      }
+    }
+    .back-link {
+      display: inline-block;
+      margin: 40px auto;
+      padding: 12px 25px;
+      background: #ff8a00;
+      color: #0d1020;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .back-link:hover {
+      background: #0f1117;
+      color: #7aa2ff;
+      border: 1px solid #7aa2ff;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      background: #131726;
+      color: #dbe1ff;
+    }
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav class="nav" id="navMenu">
+    <a href="index.html">Back to House of Links</a>
+    <a href="internet-cafe.html">Internet Café Services</a>
+    <a href="branding.html" class="active">Branding & Promo</a>
+    <a href="graphic-design.html">Graphic Design</a>
+    <a href="website.html">Website Development & Company Registration</a>
+    <a href="it-and-technical-support.html">IT & Technical Support</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Branding & Promotional Materials</h1>
+  <p>Business cards, flyers, banners, and brochures designed to grow your brand.</p>
+  <a href="index.html#contact" class="btn">Contact Us</a>
+</section>
+
+<section class="service-section">
+  <div class="service-block">
+    <h2>Business Cards</h2>
+    <p>Professional, high-quality business cards designed to make a lasting impression.</p>
+  </div>
+  <div class="service-block">
+    <h2>Flyers</h2>
+    <p>Creative flyers that grab attention and communicate your message effectively.</p>
+  </div>
+  <div class="service-block">
+    <h2>Banner Design (Digital Only)</h2>
+    <p>Custom banner artwork ready for printing.</p>
+  </div>
+  <div class="service-block">
+    <h2>Brochures</h2>
+    <p>Informative and beautifully designed brochures.</p>
+  </div>
+</section>
+
+<div style="text-align:center;">
+  <a href="links-printing-solutions.html" class="back-link">Back to Links Printing Solutions</a>
+</div>
+
+<footer class="footer">
+  &copy; 2025 Links Printing Solutions. Open daily 8AM - 7PM.
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
+</body>
+</html>
